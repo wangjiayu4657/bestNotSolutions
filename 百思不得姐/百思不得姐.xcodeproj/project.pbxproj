@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2DAC8B049C8131759B304A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2E94AB83A8B1BAB4534FF /* libPods.a */; };
+		FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37341D113B1A007EE546 /* WJYNavigationController.m */; };
+		FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1F37361D114DB8007EE546 /* WJYFriendTrendsViewController.xib */; };
+		FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37391D115761007EE546 /* WJYRecommendedViewController.m */; };
+		FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1F373A1D115761007EE546 /* WJYRecommendedViewController.xib */; };
+		FA1F37401D1159AD007EE546 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F373F1D1159AD007EE546 /* HttpClient.m */; };
+		FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37421D115A02007EE546 /* NSObject+Additions.m */; };
+		FA1F37461D117967007EE546 /* WJYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37451D117967007EE546 /* WJYModel.m */; };
 		FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0A91D0EA30E00D63B2F /* Main.storyboard */; };
 		FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0AE1D0EA30E00D63B2F /* LaunchScreen.storyboard */; };
 		FA60C0BB1D0EA30E00D63B2F /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA60C0BA1D0EA30E00D63B2F /* _____Tests.m */; };
@@ -43,6 +51,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4677D504760768B74817F777 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CFE2E94AB83A8B1BAB4534FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEA384062D3A309F32C5D54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA1F37331D113B1A007EE546 /* WJYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYNavigationController.h; sourceTree = "<group>"; };
+		FA1F37341D113B1A007EE546 /* WJYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYNavigationController.m; sourceTree = "<group>"; };
+		FA1F37361D114DB8007EE546 /* WJYFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYFriendTrendsViewController.xib; sourceTree = "<group>"; };
+		FA1F37381D115761007EE546 /* WJYRecommendedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedViewController.h; sourceTree = "<group>"; };
+		FA1F37391D115761007EE546 /* WJYRecommendedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYRecommendedViewController.m; sourceTree = "<group>"; };
+		FA1F373A1D115761007EE546 /* WJYRecommendedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYRecommendedViewController.xib; sourceTree = "<group>"; };
+		FA1F373E1D1159AD007EE546 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		FA1F373F1D1159AD007EE546 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		FA1F37411D115A02007EE546 /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
+		FA1F37421D115A02007EE546 /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
+		FA1F37441D117967007EE546 /* WJYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYModel.h; sourceTree = "<group>"; };
+		FA1F37451D117967007EE546 /* WJYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYModel.m; sourceTree = "<group>"; };
 		FA60C09D1D0EA30E00D63B2F /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA60C0AA1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA60C0AF1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2DAC8B049C8131759B304A0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +125,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B38B9319FE872ED3D4DA2D03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4677D504760768B74817F777 /* Pods.debug.xcconfig */,
+				DFEA384062D3A309F32C5D54 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E032A37ACD3F9A5D0F824B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFE2E94AB83A8B1BAB4534FF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA1F373D1D1159AD007EE546 /* HttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F373E1D1159AD007EE546 /* HttpClient.h */,
+				FA1F373F1D1159AD007EE546 /* HttpClient.m */,
+			);
+			path = HttpClient;
+			sourceTree = "<group>";
+		};
 		FA60C0941D0EA30E00D63B2F = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +158,8 @@
 				FA60C0B91D0EA30E00D63B2F /* 百思不得姐Tests */,
 				FA60C0C41D0EA30E00D63B2F /* 百思不得姐UITests */,
 				FA60C09E1D0EA30E00D63B2F /* Products */,
+				B38B9319FE872ED3D4DA2D03 /* Pods */,
+				E032A37ACD3F9A5D0F824B67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +216,7 @@
 		FA989C9B1D10268400752CE7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FA1F373D1D1159AD007EE546 /* HttpClient */,
 				FA989CAE1D10268400752CE7 /* 精华 */,
 				FA989CA81D10268400752CE7 /* 新帖 */,
 				FA989C9C1D10268400752CE7 /* 关注 */,
@@ -187,6 +240,10 @@
 			children = (
 				FA989CA01D10268400752CE7 /* WJYFriendTrendsViewController.h */,
 				FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */,
+				FA1F37361D114DB8007EE546 /* WJYFriendTrendsViewController.xib */,
+				FA1F37381D115761007EE546 /* WJYRecommendedViewController.h */,
+				FA1F37391D115761007EE546 /* WJYRecommendedViewController.m */,
+				FA1F373A1D115761007EE546 /* WJYRecommendedViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -194,6 +251,8 @@
 		FA989C9E1D10268400752CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA1F37441D117967007EE546 /* WJYModel.h */,
+				FA1F37451D117967007EE546 /* WJYModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -320,6 +379,8 @@
 		FA989CB71D10268400752CE7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FA1F37411D115A02007EE546 /* NSObject+Additions.h */,
+				FA1F37421D115A02007EE546 /* NSObject+Additions.m */,
 				FA989CB81D10268400752CE7 /* UIBarButtonItem+WJYExtension.h */,
 				FA989CB91D10268400752CE7 /* UIBarButtonItem+WJYExtension.m */,
 				FA989CBA1D10268400752CE7 /* UIView+WJYExtension.h */,
@@ -333,6 +394,8 @@
 			children = (
 				FA989CBD1D10268400752CE7 /* WJYTabBarController.h */,
 				FA989CBE1D10268400752CE7 /* WJYTabBarController.m */,
+				FA1F37331D113B1A007EE546 /* WJYNavigationController.h */,
+				FA1F37341D113B1A007EE546 /* WJYNavigationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -353,9 +416,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA60C0CA1D0EA30E00D63B2F /* Build configuration list for PBXNativeTarget "百思不得姐" */;
 			buildPhases = (
+				F153182EF1D75D8CA00218CB /* Check Pods Manifest.lock */,
 				FA60C0991D0EA30E00D63B2F /* Sources */,
 				FA60C09A1D0EA30E00D63B2F /* Frameworks */,
 				FA60C09B1D0EA30E00D63B2F /* Resources */,
+				CF993E2E885B0D3612D7BBD1 /* Embed Pods Frameworks */,
+				B45FCDE3CC92BDBAEDB7168A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -450,6 +516,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */,
+				FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */,
 				FAB01E801D102BDF00710854 /* Info.plist in Resources */,
 				FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */,
 				FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */,
@@ -473,6 +541,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B45FCDE3CC92BDBAEDB7168A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF993E2E885B0D3612D7BBD1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F153182EF1D75D8CA00218CB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA60C0991D0EA30E00D63B2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -482,12 +598,17 @@
 				FA989CC91D10268400752CE7 /* WJYEssenceViewController.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
 				FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */,
+				FA1F37461D117967007EE546 /* WJYModel.m in Sources */,
+				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
 				FA989CCA1D10268400752CE7 /* AppDelegate.m in Sources */,
 				FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */,
+				FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */,
 				FAB01E7C1D102A3400710854 /* main.m in Sources */,
+				FA1F37401D1159AD007EE546 /* HttpClient.m in Sources */,
 				FA989CCB1D10268400752CE7 /* UIBarButtonItem+WJYExtension.m in Sources */,
+				FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +769,7 @@
 		};
 		FA60C0CB1D0EA30E00D63B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4677D504760768B74817F777 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -661,6 +783,7 @@
 		};
 		FA60C0CC1D0EA30E00D63B2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFEA384062D3A309F32C5D54 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
