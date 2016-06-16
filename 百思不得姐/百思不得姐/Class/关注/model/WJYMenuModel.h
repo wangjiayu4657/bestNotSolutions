@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WJYModel : NSObject
+@interface WJYMenuModel : NSObject
 
 /**id*/
-@property (assign , nonatomic) NSInteger ID;
+@property (assign , nonatomic) NSInteger id;
+/**数量*/
 @property (assign , nonatomic) NSInteger count;
+/**名称*/
 @property (strong , nonatomic) NSString *name;
+
+/**这个类别对应的用户数据*/
+@property (strong , nonatomic)  NSMutableArray *users;
 
 @end

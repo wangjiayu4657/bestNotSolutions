@@ -14,7 +14,7 @@
 		FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1F373A1D115761007EE546 /* WJYRecommendedViewController.xib */; };
 		FA1F37401D1159AD007EE546 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F373F1D1159AD007EE546 /* HttpClient.m */; };
 		FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37421D115A02007EE546 /* NSObject+Additions.m */; };
-		FA1F37461D117967007EE546 /* WJYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37451D117967007EE546 /* WJYModel.m */; };
+		FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37451D117967007EE546 /* WJYMenuModel.m */; };
 		FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0A91D0EA30E00D63B2F /* Main.storyboard */; };
 		FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0AE1D0EA30E00D63B2F /* LaunchScreen.storyboard */; };
 		FA60C0BB1D0EA30E00D63B2F /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA60C0BA1D0EA30E00D63B2F /* _____Tests.m */; };
@@ -29,6 +29,11 @@
 		FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CBE1D10268400752CE7 /* WJYTabBarController.m */; };
 		FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA989CBF1D10268400752CE7 /* Images.xcassets */; };
 		FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CC51D10268400752CE7 /* WJYTabBar.m */; };
+		FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA919ED1D1254E30003AB17 /* WJYMenuCell.m */; };
+		FAA919F01D1254E30003AB17 /* WJYMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA919EE1D1254E30003AB17 /* WJYMenuCell.xib */; };
+		FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA91A321D12A4090003AB17 /* WJYContentModel.m */; };
+		FAA91A371D12A4340003AB17 /* WJYContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA91A351D12A4340003AB17 /* WJYContentCell.m */; };
+		FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA91A361D12A4340003AB17 /* WJYContentCell.xib */; };
 		FAB01E7C1D102A3400710854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB01E7A1D102A0900710854 /* main.m */; };
 		FAB01E801D102BDF00710854 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA989CD21D10277300752CE7 /* Info.plist */; };
 /* End PBXBuildFile section */
@@ -64,8 +69,8 @@
 		FA1F373F1D1159AD007EE546 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		FA1F37411D115A02007EE546 /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		FA1F37421D115A02007EE546 /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
-		FA1F37441D117967007EE546 /* WJYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYModel.h; sourceTree = "<group>"; };
-		FA1F37451D117967007EE546 /* WJYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYModel.m; sourceTree = "<group>"; };
+		FA1F37441D117967007EE546 /* WJYMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYMenuModel.h; sourceTree = "<group>"; };
+		FA1F37451D117967007EE546 /* WJYMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYMenuModel.m; sourceTree = "<group>"; };
 		FA60C09D1D0EA30E00D63B2F /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA60C0AA1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA60C0AF1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,6 +101,14 @@
 		FA989CC51D10268400752CE7 /* WJYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTabBar.m; sourceTree = "<group>"; };
 		FA989CD31D10277300752CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		FA989CD71D10277300752CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Base; path = Base.lproj/PrefixHeader.pch; sourceTree = "<group>"; };
+		FAA919EC1D1254E30003AB17 /* WJYMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYMenuCell.h; sourceTree = "<group>"; };
+		FAA919ED1D1254E30003AB17 /* WJYMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYMenuCell.m; sourceTree = "<group>"; };
+		FAA919EE1D1254E30003AB17 /* WJYMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYMenuCell.xib; sourceTree = "<group>"; };
+		FAA91A311D12A4090003AB17 /* WJYContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYContentModel.h; sourceTree = "<group>"; };
+		FAA91A321D12A4090003AB17 /* WJYContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYContentModel.m; sourceTree = "<group>"; };
+		FAA91A341D12A4340003AB17 /* WJYContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYContentCell.h; sourceTree = "<group>"; };
+		FAA91A351D12A4340003AB17 /* WJYContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYContentCell.m; sourceTree = "<group>"; };
+		FAA91A361D12A4340003AB17 /* WJYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYContentCell.xib; sourceTree = "<group>"; };
 		FAB01E7B1D102A0900710854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Base; path = Base.lproj/main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,8 +264,10 @@
 		FA989C9E1D10268400752CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F37441D117967007EE546 /* WJYModel.h */,
-				FA1F37451D117967007EE546 /* WJYModel.m */,
+				FA1F37441D117967007EE546 /* WJYMenuModel.h */,
+				FA1F37451D117967007EE546 /* WJYMenuModel.m */,
+				FAA91A311D12A4090003AB17 /* WJYContentModel.h */,
+				FAA91A321D12A4090003AB17 /* WJYContentModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -260,6 +275,12 @@
 		FA989C9F1D10268400752CE7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FAA919EC1D1254E30003AB17 /* WJYMenuCell.h */,
+				FAA919ED1D1254E30003AB17 /* WJYMenuCell.m */,
+				FAA919EE1D1254E30003AB17 /* WJYMenuCell.xib */,
+				FAA91A341D12A4340003AB17 /* WJYContentCell.h */,
+				FAA91A351D12A4340003AB17 /* WJYContentCell.m */,
+				FAA91A361D12A4340003AB17 /* WJYContentCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -516,9 +537,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */,
 				FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */,
 				FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */,
 				FAB01E801D102BDF00710854 /* Info.plist in Resources */,
+				FAA919F01D1254E30003AB17 /* WJYMenuCell.xib in Resources */,
 				FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */,
 				FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */,
 				FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */,
@@ -598,10 +621,13 @@
 				FA989CC91D10268400752CE7 /* WJYEssenceViewController.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
 				FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */,
-				FA1F37461D117967007EE546 /* WJYModel.m in Sources */,
+				FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */,
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
+				FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */,
+				FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
+				FAA91A371D12A4340003AB17 /* WJYContentCell.m in Sources */,
 				FA989CCA1D10268400752CE7 /* AppDelegate.m in Sources */,
 				FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */,
 				FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */,

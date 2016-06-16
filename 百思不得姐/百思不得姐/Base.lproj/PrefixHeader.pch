@@ -11,12 +11,16 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "UIView+WJYExtension.h"
 #import "UIBarButtonItem+WJYExtension.h"
 #import "NSObject+Additions.h"
 #import "HttpClient.h"
 #import <SVProgressHUD.h>
 #import <UIView+WebCacheOperation.h>
+#import <MJExtension.h>
+#import <UIImageView+WebCache.h>
 
 //#ifdef DEBUG 
 //#define NSLog(...) NSLog(__VA_ARGS__)
@@ -46,6 +50,24 @@
  对象有效性宏定义 - End
  *****************************************************/
 
+
+
+
+
+
+/****************************************************
+ GCD
+ *****************************************************/
+
+#define GCD_MAIN_QUEUE_BEGIN                dispatch_async(dispatch_get_main_queue(), ^{
+#define GCD_MAIN_QUEUE_END                  });
+
+#define GCD_GLOBAL_QUEUE_BEGIN              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+#define GCD_GLOBAL_QUEUE_END                });
+
+/****************************************************
+ GCD - End
+ *****************************************************/
 
 
 #endif /* PrefixHeader_pch */

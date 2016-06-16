@@ -80,12 +80,12 @@ NSString * const kBeauticianErrorDomain = @"com.m3w4.beautician.httperror";
                                                        parameters:mutableParams
                                                           success:^(NSURLSessionDataTask *task, id responseObject) {
               NSLog(@"Request URL: %@", [task.originalRequest.URL absoluteString]);
-//            NSLog(@"Response Object:\n%@", responseObject);
+              NSLog(@"Response Object:\n%@", responseObject);
               NSLog(@"Response Headers:\n%@", ((NSHTTPURLResponse *)(task.response)).allHeaderFields);
               
-              if ([responseObject isKindOfClass:[NSDictionary class]] == NO) {
-                  responseObject = nil;
-              }
+//              if ([responseObject isKindOfClass:[NSDictionary class]] == NO) {
+//                  responseObject = nil;
+//              }
 
               if (resultBlock) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
