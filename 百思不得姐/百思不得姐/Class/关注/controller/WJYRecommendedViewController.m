@@ -23,6 +23,9 @@
 /**菜单数据源*/
 @property (strong , nonatomic)  NSMutableArray *dataSource;
 
+/**请求参数*/
+@property (strong , nonatomic)  NSMutableDictionary *params;
+
 @end
 
 @implementation WJYRecommendedViewController
@@ -38,8 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadMenuContent];
     [self setUpTableView];
+    [self loadMenuContent];
 }
 
 //初始化 TableView
@@ -50,7 +53,6 @@
     // 注册
     [self.menuTableView registerNib:[UINib nibWithNibName:NSStringFromClass([WJYMenuCell class]) bundle:nil] forCellReuseIdentifier:menuCellID];
     [self.contentTableView registerNib:[UINib nibWithNibName:NSStringFromClass([WJYContentCell class]) bundle:nil] forCellReuseIdentifier:contentCellID];
-    
     self.contentTableView.rowHeight = 80;
     
     self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewContent)];
@@ -68,19 +70,26 @@
     param[@"c"] = @"subscribe";
     param[@"page"] = @(model.currentPage);
     param[@"category_id"] = @(model.id);
+    self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
-        //字典数组 -> 模型数组
-        NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        //先清空所有的旧数据
-        [model.users removeAllObjects];
-        //添加到当前菜单类别对应的内容数组中
-        [model.users addObjectsFromArray:array];
-         model.total = [responseObject[@"total"] integerValue];
-         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.contentTableView reloadData];
+        if (!error) {
+            if (self.params != param) return;//如果两次的请求参数不一样,则只处理最后一次的数据
+            //字典数组 -> 模型数组
+            NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            //先清空所有的旧数据
+            [model.users removeAllObjects];
+            //添加到当前菜单类别对应的内容数组中
+            [model.users addObjectsFromArray:array];
+            model.total = [responseObject[@"total"] integerValue];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.contentTableView reloadData];
+                [self.contentTableView.mj_header endRefreshing];
+                [self checkFooterStatus];
+            });
+        }else {
+            if (self.params != param) return;
             [self.contentTableView.mj_header endRefreshing];
-            [self checkFooterStatus];
-         });
+        }
     }];
 }
 
@@ -93,21 +102,28 @@
     param[@"c"] = @"subscribe";
     param[@"category_id"] = @(model.id);
     param[@"page"] = @(++model.currentPage);
+    self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
-        //字典数组 -> 模型数组
-        NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        //添加到当前菜单类别对应的内容数组中
-        [model.users addObjectsFromArray:array];
-         model.total = [responseObject[@"total"] integerValue];
-       
-         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.contentTableView reloadData];
-             if (model.total == model.users.count) {
-                 [self.contentTableView.mj_footer endRefreshingWithNoMoreData];
-             }else {
-                 [self.contentTableView.mj_footer endRefreshing];
-             }
-        });
+        if (!error) {
+            if (self.params != param) return;
+            //字典数组 -> 模型数组
+            NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            //添加到当前菜单类别对应的内容数组中
+            [model.users addObjectsFromArray:array];
+            model.total = [responseObject[@"total"] integerValue];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.contentTableView reloadData];
+                if (model.total == model.users.count) {
+                    [self.contentTableView.mj_footer endRefreshingWithNoMoreData];
+                }else {
+                    [self.contentTableView.mj_footer endRefreshing];
+                }
+            });
+        }else {
+            if (self.params != param) return;
+            [self.contentTableView.mj_footer endRefreshing];
+        }
     }];
 }
 
@@ -172,6 +188,9 @@
 #pragma mark - <UITaleViewDelegate>
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.contentTableView.mj_header endRefreshing];
+    [self.contentTableView.mj_footer endRefreshing];
+    
     WJYMenuModel *model = self.dataSource[indexPath.row];
     if (model.users.count) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -184,6 +203,11 @@
             [self.contentTableView.mj_header beginRefreshing];
         });
     }
+}
+
+
+-(void)dealloc {
+    [[HttpClient sharedClient].operationQueue cancelAllOperations];
 }
 
 - (void)didReceiveMemoryWarning {

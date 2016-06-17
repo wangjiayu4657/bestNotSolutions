@@ -11,10 +11,8 @@
 static id sharedClient = nil;
 
 NSString * const kDevelopmentAPIBaseURL = @"DevelopmentAPIBaseURLKey";
-
 NSString * const kAPIBaseURLDevelopment = @"http://192.168.20.111:8080";
 NSString * const kAPIBaseURLProduction  = @"http://app.m3w4.com";
-
 NSString * const kBeauticianErrorDomain = @"com.m3w4.beautician.httperror";
 
 @interface HttpClient ()
@@ -35,8 +33,7 @@ NSString * const kBeauticianErrorDomain = @"com.m3w4.beautician.httperror";
 {
     static dispatch_once_t oneceToken;
     dispatch_once(&oneceToken, ^{
-        
-        sharedClient = [[self alloc] init];
+        sharedClient = [[self alloc] initWithBaseURL:nil];
     });
     return sharedClient;
 }
@@ -50,7 +47,6 @@ NSString * const kBeauticianErrorDomain = @"com.m3w4.beautician.httperror";
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         self.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     }
-    
     return self;
 }
 
@@ -80,7 +76,7 @@ NSString * const kBeauticianErrorDomain = @"com.m3w4.beautician.httperror";
                                                        parameters:mutableParams
                                                           success:^(NSURLSessionDataTask *task, id responseObject) {
               NSLog(@"Request URL: %@", [task.originalRequest.URL absoluteString]);
-              NSLog(@"Response Object:\n%@", responseObject);
+//            NSLog(@"Response Object:\n%@", responseObject);
               NSLog(@"Response Headers:\n%@", ((NSHTTPURLResponse *)(task.response)).allHeaderFields);
               
 //              if ([responseObject isKindOfClass:[NSDictionary class]] == NO) {
