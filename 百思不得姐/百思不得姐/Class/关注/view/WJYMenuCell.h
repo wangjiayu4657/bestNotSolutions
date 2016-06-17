@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WJYMenuModel.h"
 
+static NSString * const menuCellID = @"menuCell";
 
 @interface WJYMenuCell : UITableViewCell
 

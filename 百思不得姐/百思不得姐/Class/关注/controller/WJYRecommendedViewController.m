@@ -11,6 +11,10 @@
 #import "WJYMenuCell.h"
 #import "WJYContentCell.h"
 
+
+
+#define selectedMenuTableView self.dataSource[self.menuTableView.indexPathForSelectedRow.row]
+
 @interface WJYRecommendedViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
@@ -20,10 +24,6 @@
 @property (strong , nonatomic)  NSMutableArray *dataSource;
 
 @end
-
-
-static NSString * const menuCellID = @"menuCell";
-static NSString * const contentCellID = @"contentCell";
 
 @implementation WJYRecommendedViewController
 
@@ -37,19 +37,82 @@ static NSString * const contentCellID = @"contentCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadMenuContent];
+    [self setUpTableView];
+}
+
+//初始化 TableView
+- (void) setUpTableView {
     self.navigationItem.title = @"推荐关注";
     self.view.backgroundColor = GlobalColor;
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     // 注册
     [self.menuTableView registerNib:[UINib nibWithNibName:NSStringFromClass([WJYMenuCell class]) bundle:nil] forCellReuseIdentifier:menuCellID];
     [self.contentTableView registerNib:[UINib nibWithNibName:NSStringFromClass([WJYContentCell class]) bundle:nil] forCellReuseIdentifier:contentCellID];
-
+    
     self.contentTableView.rowHeight = 80;
+    
+    self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewContent)];
+    self.contentTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreContent)];
+    self.contentTableView.mj_footer.hidden = YES;
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+//下拉刷新
+- (void) loadNewContent {
+    WJYMenuModel *model = selectedMenuTableView;
+    model.currentPage = 1;
+    HttpClient *aClient = [HttpClient sharedClient];
+    NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:4];
+    param[@"a"] = @"list";
+    param[@"c"] = @"subscribe";
+    param[@"page"] = @(model.currentPage);
+    param[@"category_id"] = @(model.id);
+    [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
+        //字典数组 -> 模型数组
+        NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //先清空所有的旧数据
+        [model.users removeAllObjects];
+        //添加到当前菜单类别对应的内容数组中
+        [model.users addObjectsFromArray:array];
+         model.total = [responseObject[@"total"] integerValue];
+         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contentTableView reloadData];
+            [self.contentTableView.mj_header endRefreshing];
+            [self checkFooterStatus];
+         });
+    }];
+}
+
+//上拉刷新
+- (void) loadMoreContent {
+    WJYMenuModel *model = selectedMenuTableView;
+    HttpClient *aClient = [HttpClient sharedClient];
+    NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:4];
+    param[@"a"] = @"list";
+    param[@"c"] = @"subscribe";
+    param[@"category_id"] = @(model.id);
+    param[@"page"] = @(++model.currentPage);
+    [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
+        //字典数组 -> 模型数组
+        NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //添加到当前菜单类别对应的内容数组中
+        [model.users addObjectsFromArray:array];
+         model.total = [responseObject[@"total"] integerValue];
+       
+         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contentTableView reloadData];
+             if (model.total == model.users.count) {
+                 [self.contentTableView.mj_footer endRefreshingWithNoMoreData];
+             }else {
+                 [self.contentTableView.mj_footer endRefreshing];
+             }
+        });
+    }];
+}
+
+//加载菜单栏的数据
+- (void) loadMenuContent {
     [SVProgressHUD show];
     HttpClient *aClient = [HttpClient sharedClient];
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:2];
@@ -59,11 +122,11 @@ static NSString * const contentCellID = @"contentCell";
         if (!error) {
             [SVProgressHUD dismiss];
             self.dataSource = [WJYMenuModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-            NSLog(@"%@",self.dataSource);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.menuTableView reloadData];
                 //默认选中首行
                 [self.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+                self.contentTableView.dataSource = self;//数据下载完成后再刷新contentTableView表格
             });
         }else {
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
@@ -71,22 +134,26 @@ static NSString * const contentCellID = @"contentCell";
     }];
 }
 
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    WJYMenuModel *model ;
-    
-    if (tableView == self.menuTableView) { //左边的菜单表格
-         return self.dataSource.count;
-    }else { //右边的内容表格
-        if (self.dataSource.count) {
-           model = self.dataSource[self.menuTableView.indexPathForSelectedRow.row]; //取出左边被选中类别的数据模型
-        }
-        return model.users.count;
+//时刻检测 footer 的状态
+- (void) checkFooterStatus {
+    WJYMenuModel *model = selectedMenuTableView;
+    self.contentTableView.mj_footer.hidden = (model.users.count == 0);//根据被选中的模型是否有数据来决定是否显示上拉刷新
+    if (model.total == model.users.count) {
+        [self.contentTableView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        [self.contentTableView.mj_footer endRefreshing];
     }
+
 }
 
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#pragma mark - <UITableViewDataSource>
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //左边的菜单表格
+    if (tableView == self.menuTableView)  return self.dataSource.count;//右边的内容表格
+    //检测 footer 的状态
+    [self checkFooterStatus];
+    return [selectedMenuTableView users].count;
+    
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,12 +163,13 @@ static NSString * const contentCellID = @"contentCell";
         return menuCell;
     }else { //右边的内容表格
         WJYContentCell *contentCell = [tableView dequeueReusableCellWithIdentifier:contentCellID];
-        WJYMenuModel *model = self.dataSource[self.menuTableView.indexPathForSelectedRow.row];
+        WJYMenuModel *model = selectedMenuTableView;
         contentCell.contentModel = model.users[indexPath.row];
         return contentCell;
     }
 }
 
+#pragma mark - <UITaleViewDelegate>
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WJYMenuModel *model = self.dataSource[indexPath.row];
@@ -110,21 +178,11 @@ static NSString * const contentCellID = @"contentCell";
             [self.contentTableView reloadData];
         });
     }else {
-        HttpClient *aClient = [HttpClient sharedClient];
-        NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:2];
-        param[@"a"] = @"list";
-        param[@"c"] = @"subscribe";
-        param[@"category_id"] = @(model.id);
-        [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
-            NSLog(@"%@",responseObject);
-            //字典数组 -> 模型数组
-            NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-            //添加到当前菜单类别对应的内容数组中
-            [model.users addObjectsFromArray:array];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.contentTableView reloadData];
-            });
-        }];
+        //解决网络有延迟的话界面内容刷新迟滞的现象
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contentTableView reloadData];
+            [self.contentTableView.mj_header beginRefreshing];
+        });
     }
 }
 

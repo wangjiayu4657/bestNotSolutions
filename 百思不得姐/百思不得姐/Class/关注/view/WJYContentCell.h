@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WJYContentModel.h"
+
+static NSString * const contentCellID = @"contentCell";
+
 @interface WJYContentCell : UITableViewCell
 
 /** 数据模型*/
