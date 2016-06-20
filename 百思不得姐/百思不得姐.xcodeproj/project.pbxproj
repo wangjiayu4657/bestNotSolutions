@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C2DAC8B049C8131759B304A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2E94AB83A8B1BAB4534FF /* libPods.a */; };
+		FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */; };
+		FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8351D17BD51008F7AC2 /* WJYRecommendedTag.m */; };
+		FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8381D17BD76008F7AC2 /* WJYRecommendedTagCell.m */; };
+		FA1AB83B1D17BD76008F7AC2 /* WJYRecommendedTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1AB8391D17BD76008F7AC2 /* WJYRecommendedTagCell.xib */; };
+		FA1AB83D1D17BFB1008F7AC2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB83C1D17BFB1008F7AC2 /* Foundation+Log.m */; };
+		FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB83F1D181026008F7AC2 /* WJYLoginRegisterViewController.m */; };
+		FA1AB8421D181026008F7AC2 /* WJYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1AB8401D181026008F7AC2 /* WJYLoginRegisterViewController.xib */; };
+		FA1AB8451D1818E7008F7AC2 /* WJYVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8441D1818E7008F7AC2 /* WJYVerticalButton.m */; };
 		FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37341D113B1A007EE546 /* WJYNavigationController.m */; };
 		FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1F37361D114DB8007EE546 /* WJYFriendTrendsViewController.xib */; };
 		FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37391D115761007EE546 /* WJYRecommendedViewController.m */; };
@@ -59,6 +67,19 @@
 		4677D504760768B74817F777 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE2E94AB83A8B1BAB4534FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEA384062D3A309F32C5D54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA1AB8311D17BD33008F7AC2 /* WJYRecommendedTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedTagViewController.h; sourceTree = "<group>"; };
+		FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYRecommendedTagViewController.m; sourceTree = "<group>"; };
+		FA1AB8341D17BD51008F7AC2 /* WJYRecommendedTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedTag.h; sourceTree = "<group>"; };
+		FA1AB8351D17BD51008F7AC2 /* WJYRecommendedTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYRecommendedTag.m; sourceTree = "<group>"; };
+		FA1AB8371D17BD76008F7AC2 /* WJYRecommendedTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedTagCell.h; sourceTree = "<group>"; };
+		FA1AB8381D17BD76008F7AC2 /* WJYRecommendedTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYRecommendedTagCell.m; sourceTree = "<group>"; };
+		FA1AB8391D17BD76008F7AC2 /* WJYRecommendedTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYRecommendedTagCell.xib; sourceTree = "<group>"; };
+		FA1AB83C1D17BFB1008F7AC2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		FA1AB83E1D181026008F7AC2 /* WJYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYLoginRegisterViewController.h; sourceTree = "<group>"; };
+		FA1AB83F1D181026008F7AC2 /* WJYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYLoginRegisterViewController.m; sourceTree = "<group>"; };
+		FA1AB8401D181026008F7AC2 /* WJYLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		FA1AB8431D1818E7008F7AC2 /* WJYVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYVerticalButton.h; sourceTree = "<group>"; };
+		FA1AB8441D1818E7008F7AC2 /* WJYVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYVerticalButton.m; sourceTree = "<group>"; };
 		FA1F37331D113B1A007EE546 /* WJYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYNavigationController.h; sourceTree = "<group>"; };
 		FA1F37341D113B1A007EE546 /* WJYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYNavigationController.m; sourceTree = "<group>"; };
 		FA1F37361D114DB8007EE546 /* WJYFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYFriendTrendsViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +220,7 @@
 		FA60C0A01D0EA30E00D63B2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AB83C1D17BFB1008F7AC2 /* Foundation+Log.m */,
 				FAB01E7A1D102A0900710854 /* main.m */,
 				FA989CD21D10277300752CE7 /* Info.plist */,
 				FA989CD61D10277300752CE7 /* PrefixHeader.pch */,
@@ -257,6 +279,9 @@
 				FA1F37381D115761007EE546 /* WJYRecommendedViewController.h */,
 				FA1F37391D115761007EE546 /* WJYRecommendedViewController.m */,
 				FA1F373A1D115761007EE546 /* WJYRecommendedViewController.xib */,
+				FA1AB83E1D181026008F7AC2 /* WJYLoginRegisterViewController.h */,
+				FA1AB83F1D181026008F7AC2 /* WJYLoginRegisterViewController.m */,
+				FA1AB8401D181026008F7AC2 /* WJYLoginRegisterViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -281,6 +306,8 @@
 				FAA91A341D12A4340003AB17 /* WJYContentCell.h */,
 				FAA91A351D12A4340003AB17 /* WJYContentCell.m */,
 				FAA91A361D12A4340003AB17 /* WJYContentCell.xib */,
+				FA1AB8431D1818E7008F7AC2 /* WJYVerticalButton.h */,
+				FA1AB8441D1818E7008F7AC2 /* WJYVerticalButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -366,6 +393,8 @@
 			children = (
 				FA989CB01D10268400752CE7 /* WJYEssenceViewController.h */,
 				FA989CB11D10268400752CE7 /* WJYEssenceViewController.m */,
+				FA1AB8311D17BD33008F7AC2 /* WJYRecommendedTagViewController.h */,
+				FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -373,6 +402,8 @@
 		FA989CB21D10268400752CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AB8341D17BD51008F7AC2 /* WJYRecommendedTag.h */,
+				FA1AB8351D17BD51008F7AC2 /* WJYRecommendedTag.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -380,6 +411,9 @@
 		FA989CB31D10268400752CE7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AB8371D17BD76008F7AC2 /* WJYRecommendedTagCell.h */,
+				FA1AB8381D17BD76008F7AC2 /* WJYRecommendedTagCell.m */,
+				FA1AB8391D17BD76008F7AC2 /* WJYRecommendedTagCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -543,8 +577,10 @@
 				FAB01E801D102BDF00710854 /* Info.plist in Resources */,
 				FAA919F01D1254E30003AB17 /* WJYMenuCell.xib in Resources */,
 				FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */,
+				FA1AB8421D181026008F7AC2 /* WJYLoginRegisterViewController.xib in Resources */,
 				FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */,
 				FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */,
+				FA1AB83B1D17BD76008F7AC2 /* WJYRecommendedTagCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,10 +656,16 @@
 				FA989CCC1D10268400752CE7 /* UIView+WJYExtension.m in Sources */,
 				FA989CC91D10268400752CE7 /* WJYEssenceViewController.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
+				FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */,
 				FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */,
+				FA1AB83D1D17BFB1008F7AC2 /* Foundation+Log.m in Sources */,
+				FA1AB8451D1818E7008F7AC2 /* WJYVerticalButton.m in Sources */,
+				FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */,
 				FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */,
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
+				FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
+				FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */,
 				FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */,
 				FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,

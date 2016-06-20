@@ -8,7 +8,7 @@
 
 #import "WJYFriendTrendsViewController.h"
 #import "WJYRecommendedViewController.h"
-
+#import "WJYLoginRegisterViewController.h"
 @interface WJYFriendTrendsViewController ()
 
 @end
@@ -30,6 +30,9 @@
 }
 
 
+- (IBAction)LoginRegisterButton:(id)sender {
+    [self presentViewController:[[WJYLoginRegisterViewController alloc] init] animated:YES completion:nil];
+}
 
 
 /*

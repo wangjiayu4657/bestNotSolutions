@@ -18,20 +18,24 @@
 @implementation WJYContentCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setContentModel:(WJYContentModel *)contentModel {
     _contentModel = contentModel;
     
     self.screenNameLabel.text = contentModel.screen_name;
-    self.fansCountLabel.text = [NSString stringWithFormat:@"%zd人关注",contentModel.fans_count];
+    NSString *count = nil;
+    if (contentModel.fans_count < 10000) {
+        count = [NSString stringWithFormat:@"%zd人关注",contentModel.fans_count];
+    }else {
+        count = [NSString stringWithFormat:@"%.1f万人关注",contentModel.fans_count / 10000.0];
+    }
+    self.fansCountLabel.text = count;
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:contentModel.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     
 }

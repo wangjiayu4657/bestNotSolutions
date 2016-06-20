@@ -13,7 +13,7 @@
 
 
 
-#define selectedMenuTableView self.dataSource[self.menuTableView.indexPathForSelectedRow.row]
+#define selectedMenuTableViewCell self.dataSource[self.menuTableView.indexPathForSelectedRow.row]
 
 @interface WJYRecommendedViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -62,7 +62,7 @@
 
 //下拉刷新
 - (void) loadNewContent {
-    WJYMenuModel *model = selectedMenuTableView;
+    WJYMenuModel *model = selectedMenuTableViewCell;
     model.currentPage = 1;
     HttpClient *aClient = [HttpClient sharedClient];
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:4];
@@ -73,7 +73,6 @@
     self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
         if (!error) {
-            if (self.params != param) return;//如果两次的请求参数不一样,则只处理最后一次的数据
             //字典数组 -> 模型数组
             NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
             //先清空所有的旧数据
@@ -81,6 +80,7 @@
             //添加到当前菜单类别对应的内容数组中
             [model.users addObjectsFromArray:array];
             model.total = [responseObject[@"total"] integerValue];
+            if (self.params != param) return;//如果是最后一次请求才进行刷新
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.contentTableView reloadData];
                 [self.contentTableView.mj_header endRefreshing];
@@ -95,7 +95,7 @@
 
 //上拉刷新
 - (void) loadMoreContent {
-    WJYMenuModel *model = selectedMenuTableView;
+    WJYMenuModel *model = selectedMenuTableViewCell;
     HttpClient *aClient = [HttpClient sharedClient];
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:4];
     param[@"a"] = @"list";
@@ -105,13 +105,12 @@
     self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
         if (!error) {
-            if (self.params != param) return;
             //字典数组 -> 模型数组
             NSArray *array = [WJYContentModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
             //添加到当前菜单类别对应的内容数组中
             [model.users addObjectsFromArray:array];
             model.total = [responseObject[@"total"] integerValue];
-            
+            if (self.params != param) return;//如果是最后一次请求才进行刷新
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.contentTableView reloadData];
                 if (model.total == model.users.count) {
@@ -143,6 +142,7 @@
                 //默认选中首行
                 [self.menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
                 self.contentTableView.dataSource = self;//数据下载完成后再刷新contentTableView表格
+                [self.contentTableView.mj_header beginRefreshing];
             });
         }else {
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@",error]];
@@ -152,7 +152,7 @@
 
 //时刻检测 footer 的状态
 - (void) checkFooterStatus {
-    WJYMenuModel *model = selectedMenuTableView;
+    WJYMenuModel *model = selectedMenuTableViewCell;
     self.contentTableView.mj_footer.hidden = (model.users.count == 0);//根据被选中的模型是否有数据来决定是否显示上拉刷新
     if (model.total == model.users.count) {
         [self.contentTableView.mj_footer endRefreshingWithNoMoreData];
@@ -168,7 +168,7 @@
     if (tableView == self.menuTableView)  return self.dataSource.count;//右边的内容表格
     //检测 footer 的状态
     [self checkFooterStatus];
-    return [selectedMenuTableView users].count;
+    return [selectedMenuTableViewCell users].count;
     
 }
 
@@ -179,7 +179,7 @@
         return menuCell;
     }else { //右边的内容表格
         WJYContentCell *contentCell = [tableView dequeueReusableCellWithIdentifier:contentCellID];
-        WJYMenuModel *model = selectedMenuTableView;
+        WJYMenuModel *model = selectedMenuTableViewCell;
         contentCell.contentModel = model.users[indexPath.row];
         return contentCell;
     }
@@ -205,7 +205,7 @@
     }
 }
 
-
+//控制器销毁时取消所有的数据请求
 -(void)dealloc {
     [[HttpClient sharedClient].operationQueue cancelAllOperations];
 }

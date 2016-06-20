@@ -7,7 +7,7 @@
 //
 
 #import "WJYEssenceViewController.h"
-
+#import "WJYRecommendedTagViewController.h"
 @interface WJYEssenceViewController ()
 
 @end
@@ -22,7 +22,7 @@
 }
 
 - (void) tagClick {
-    LogFunction;
+    [self.navigationController pushViewController:[[WJYRecommendedTagViewController alloc] init] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
