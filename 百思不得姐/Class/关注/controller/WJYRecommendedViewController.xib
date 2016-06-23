@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WJYRecommendedViewController">
+            <connections>
+                <outlet property="contentTableView" destination="55x-RM-zlH" id="KRQ-Ky-Ovi"/>
+                <outlet property="menuTableView" destination="Vp9-3r-7dj" id="b7t-bC-gVq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vp9-3r-7dj">
+                    <rect key="frame" x="0.0" y="64" width="75" height="603"/>
+                    <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="IHJ-zK-du3"/>
+                        <outlet property="delegate" destination="-1" id="xCK-zq-Cwi"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="55x-RM-zlH">
+                    <rect key="frame" x="75" y="64" width="300" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="55x-RM-zlH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="4au-u1-Jq2"/>
+                <constraint firstAttribute="bottom" secondItem="Vp9-3r-7dj" secondAttribute="bottom" id="5LU-AN-eSF"/>
+                <constraint firstItem="Vp9-3r-7dj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="EUO-V9-9nU"/>
+                <constraint firstItem="55x-RM-zlH" firstAttribute="width" secondItem="Vp9-3r-7dj" secondAttribute="width" multiplier="4" id="SLR-VK-C3r"/>
+                <constraint firstAttribute="bottom" secondItem="55x-RM-zlH" secondAttribute="bottom" id="d7p-Yj-nwV"/>
+                <constraint firstItem="Vp9-3r-7dj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eV0-70-h9G"/>
+                <constraint firstAttribute="trailing" secondItem="55x-RM-zlH" secondAttribute="trailing" id="puY-Vi-I2i"/>
+                <constraint firstItem="55x-RM-zlH" firstAttribute="leading" secondItem="Vp9-3r-7dj" secondAttribute="trailing" id="vU7-fN-cLB"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="237.5" y="341.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,74 @@
+//
+//  PrefixHeader.pch
+//  百思不得姐
+//
+//  Created by fangjs on 16/6/14.
+//  Copyright © 2016年 fangjs. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "UIView+WJYExtension.h"
+#import "UIBarButtonItem+WJYExtension.h"
+#import "NSObject+Additions.h"
+#import "HttpClient.h"
+#import <SVProgressHUD.h>
+#import <UIView+WebCacheOperation.h>
+#import <MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import <MJRefresh.h>
+
+#ifdef DEBUG 
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+
+#define RGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define GlobalColor RGBColor(223,223,223)
+
+#define LogFunction NSLog(@"%s",__func__)
+
+
+
+/****************************************************
+ 对象有效性宏定义
+ *****************************************************/
+
+// 如果obj为nil或者null，返回@""、@[]或者@{}，否则返回原样返回obj
+// 主要是用在setObject:forKey:或者打印NSString的时候
+#define VALID_STRING(obj)                           ([obj isKindOfClass:[NSString class]] ? obj : @"")
+#define VALID_ARRAY(obj)                            ([obj isKindOfClass:[NSArray class]] ? obj : @[])
+#define VALID_DICTIONARY(obj)                       ([obj isKindOfClass:[NSDictionary class]] ? obj : @{})
+
+/****************************************************
+ 对象有效性宏定义 - End
+ *****************************************************/
+
+
+
+
+
+
+/****************************************************
+ GCD
+ *****************************************************/
+
+#define GCD_MAIN_QUEUE_BEGIN                dispatch_async(dispatch_get_main_queue(), ^{
+#define GCD_MAIN_QUEUE_END                  });
+
+#define GCD_GLOBAL_QUEUE_BEGIN              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+#define GCD_GLOBAL_QUEUE_END                });
+
+/****************************************************
+ GCD - End
+ *****************************************************/
+
+
+#endif /* PrefixHeader_pch */
