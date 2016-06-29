@@ -39,10 +39,10 @@
     
     //设置导航栏
     [self setUpNavgation];
-    //设置顶部的标签栏
-    [self setUpTitleView];
     //初始化子控件
     [self setUpChildController];
+    //设置顶部的标签栏
+    [self setUpTitleView];
     //设置底部的 scrollView
     [self setUpContentView];
 }
@@ -58,12 +58,15 @@
     [self.navigationController pushViewController:[[WJYRecommendedTagViewController alloc] init] animated:YES];
 }
 
+//设置顶部的标签
 - (void) setUpTitleView {
+    
+    NSLog(@"%@",self.childViewControllers);
     //标题按钮的背景
     UIView *titleView = [[UIView alloc] init];
     titleView.width = self.view.width;
-    titleView.height = 35;
-    titleView.y = 64;
+    titleView.height = titleViewHeight;
+    titleView.y = titleViewY;
     titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     [self.view addSubview:titleView];
     self.titleView = titleView;
@@ -76,17 +79,18 @@
     [titleView addSubview:indcatorView];
     self.indcatorView = indcatorView;
    
-    NSArray *titlesArray = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    CGFloat width = titleView.width / titlesArray.count;
+//    NSArray *titlesArray = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
+    CGFloat width = titleView.width / self.childViewControllers.count;
     CGFloat height = titleView.height;
-    for (int i = 0; i < titlesArray.count; i++) {
+    for (int i = 0; i < self.childViewControllers.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         button.width = width;
         button.height = height;
         button.x = i * width;
         button.tag = 300 + i;
         button.titleLabel.font = [UIFont systemFontOfSize:14];
-        [button setTitle:titlesArray[i] forState:UIControlStateNormal];
+        UIViewController *VC = self.childViewControllers[i];
+        [button setTitle:VC.title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -120,23 +124,33 @@
     [self.contentView setContentOffset:offset animated:YES];
 }
 
+//设置子控制器
 - (void) setUpChildController {
+    
+    WJYWordViewController *wordVC = [[WJYWordViewController alloc] init];
+    wordVC.title = @"段子";
+    [self addChildViewController:wordVC];
+    
     WJYAllViewController *allVC = [[WJYAllViewController alloc] init];
+    allVC.title = @"全部";
     [self addChildViewController:allVC];
     
     WJYVideoViewController *videoVC = [[WJYVideoViewController alloc] init];
+    videoVC.title = @"视频";
     [self addChildViewController:videoVC];
     
     WJYVoiceViewController *voiceVC = [[WJYVoiceViewController alloc] init];
+    voiceVC.title = @"声音";
     [self addChildViewController:voiceVC];
     
     WJYPictureViewController *pictureVC = [[WJYPictureViewController alloc] init];
+    pictureVC.title = @"图片";
     [self addChildViewController:pictureVC];
     
-    WJYWordViewController *wordVC = [[WJYWordViewController alloc] init];
-    [self addChildViewController:wordVC];
+   
 }
 
+//设置内容的 scrollView
 - (void) setUpContentView {
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIScrollView *contentView = [[UIScrollView alloc] init];
@@ -151,24 +165,21 @@
     [self scrollViewDidEndScrollingAnimation:contentView];
 }
 
-
+#pragma mark - <UIScrollViewDelegate>
 - (void) scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSInteger index = scrollView.contentOffset.x / scrollView.width;
 
-    UITableViewController *tableViewController = self.childViewControllers[index];
-    tableViewController.view.x = index * scrollView.width;
-    CGFloat top = CGRectGetMaxY(self.titleView.frame);
-    CGFloat bottom = self.tabBarController.tabBar.height;
-    tableViewController.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
-    
-    [scrollView addSubview:tableViewController.view];
+    UIViewController *viewController = self.childViewControllers[index];
+    viewController.view.x = scrollView.contentOffset.x;
+    viewController.view.y = 0;
+    viewController.view.height = scrollView.height;
+    [scrollView addSubview:viewController.view];
 }
 
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self scrollViewDidEndScrollingAnimation:scrollView];
-    
-    NSInteger index = scrollView.contentOffset.x / scrollView.width + 300;
-    
+     NSInteger index = scrollView.contentOffset.x / scrollView.width + 300;
+    //根据 tag 值取出 button
     [self buttonClick:[self.view viewWithTag:index]];
 }
 

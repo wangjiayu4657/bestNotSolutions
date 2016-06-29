@@ -57,7 +57,6 @@
     
     self.contentTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewContent)];
     self.contentTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreContent)];
-    self.contentTableView.mj_footer.hidden = YES;
 }
 
 //下拉刷新
@@ -210,20 +209,6 @@
     [[HttpClient sharedClient].operationQueue cancelAllOperations];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 /**
  1.重复发送请求
  2.目前只能显示1页数据

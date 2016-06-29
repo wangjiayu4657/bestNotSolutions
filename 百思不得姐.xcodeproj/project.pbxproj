@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C2DAC8B049C8131759B304A0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2E94AB83A8B1BAB4534FF /* libPods.a */; };
+		FA05D4431D1D127800712025 /* WJYTopicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05D4421D1D127800712025 /* WJYTopicsModel.m */; };
+		FA05D4461D1D34B500712025 /* WJYConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05D4451D1D34B500712025 /* WJYConst.m */; };
+		FA05D44A1D1D465A00712025 /* WJYTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05D4481D1D465A00712025 /* WJYTopicsCell.m */; };
+		FA05D44B1D1D465A00712025 /* WJYTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA05D4491D1D465A00712025 /* WJYTopicsCell.xib */; };
+		FA16651F1D22280D005F1A6D /* NSDate+WJYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16651E1D22280D005F1A6D /* NSDate+WJYExtension.m */; };
+		FA1665231D227CD5005F1A6D /* WJYTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1665221D227CD5005F1A6D /* WJYTopicViewController.m */; };
 		FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */; };
 		FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8351D17BD51008F7AC2 /* WJYRecommendedTag.m */; };
 		FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AB8381D17BD76008F7AC2 /* WJYRecommendedTagCell.m */; };
@@ -75,6 +81,17 @@
 		4677D504760768B74817F777 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE2E94AB83A8B1BAB4534FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEA384062D3A309F32C5D54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA05D4411D1D127800712025 /* WJYTopicsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopicsModel.h; sourceTree = "<group>"; };
+		FA05D4421D1D127800712025 /* WJYTopicsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopicsModel.m; sourceTree = "<group>"; };
+		FA05D4441D1D34B500712025 /* WJYConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYConst.h; sourceTree = "<group>"; };
+		FA05D4451D1D34B500712025 /* WJYConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYConst.m; sourceTree = "<group>"; };
+		FA05D4471D1D465A00712025 /* WJYTopicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopicsCell.h; sourceTree = "<group>"; };
+		FA05D4481D1D465A00712025 /* WJYTopicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopicsCell.m; sourceTree = "<group>"; };
+		FA05D4491D1D465A00712025 /* WJYTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYTopicsCell.xib; sourceTree = "<group>"; };
+		FA16651D1D22280D005F1A6D /* NSDate+WJYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WJYExtension.h"; sourceTree = "<group>"; };
+		FA16651E1D22280D005F1A6D /* NSDate+WJYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WJYExtension.m"; sourceTree = "<group>"; };
+		FA1665211D227CD5005F1A6D /* WJYTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopicViewController.h; sourceTree = "<group>"; };
+		FA1665221D227CD5005F1A6D /* WJYTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopicViewController.m; sourceTree = "<group>"; };
 		FA1AB8311D17BD33008F7AC2 /* WJYRecommendedTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedTagViewController.h; sourceTree = "<group>"; };
 		FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYRecommendedTagViewController.m; sourceTree = "<group>"; };
 		FA1AB8341D17BD51008F7AC2 /* WJYRecommendedTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYRecommendedTag.h; sourceTree = "<group>"; };
@@ -420,6 +437,8 @@
 				FA989CB11D10268400752CE7 /* WJYEssenceViewController.m */,
 				FA1AB8311D17BD33008F7AC2 /* WJYRecommendedTagViewController.h */,
 				FA1AB8321D17BD33008F7AC2 /* WJYRecommendedTagViewController.m */,
+				FA1665211D227CD5005F1A6D /* WJYTopicViewController.h */,
+				FA1665221D227CD5005F1A6D /* WJYTopicViewController.m */,
 				FA1EA8D81D1B92AF006B6E24 /* WJYAllViewController.h */,
 				FA1EA8D91D1B92AF006B6E24 /* WJYAllViewController.m */,
 				FA1EA8D51D1B9295006B6E24 /* WJYVideoViewController.h */,
@@ -439,6 +458,8 @@
 			children = (
 				FA1AB8341D17BD51008F7AC2 /* WJYRecommendedTag.h */,
 				FA1AB8351D17BD51008F7AC2 /* WJYRecommendedTag.m */,
+				FA05D4411D1D127800712025 /* WJYTopicsModel.h */,
+				FA05D4421D1D127800712025 /* WJYTopicsModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -449,6 +470,9 @@
 				FA1AB8371D17BD76008F7AC2 /* WJYRecommendedTagCell.h */,
 				FA1AB8381D17BD76008F7AC2 /* WJYRecommendedTagCell.m */,
 				FA1AB8391D17BD76008F7AC2 /* WJYRecommendedTagCell.xib */,
+				FA05D4471D1D465A00712025 /* WJYTopicsCell.h */,
+				FA05D4481D1D465A00712025 /* WJYTopicsCell.m */,
+				FA05D4491D1D465A00712025 /* WJYTopicsCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -462,6 +486,8 @@
 				FA989CBF1D10268400752CE7 /* Images.xcassets */,
 				FA989CB51D10268400752CE7 /* AppDelegate.h */,
 				FA989CB61D10268400752CE7 /* AppDelegate.m */,
+				FA05D4441D1D34B500712025 /* WJYConst.h */,
+				FA05D4451D1D34B500712025 /* WJYConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -475,6 +501,8 @@
 				FA989CB91D10268400752CE7 /* UIBarButtonItem+WJYExtension.m */,
 				FA989CBA1D10268400752CE7 /* UIView+WJYExtension.h */,
 				FA989CBB1D10268400752CE7 /* UIView+WJYExtension.m */,
+				FA16651D1D22280D005F1A6D /* NSDate+WJYExtension.h */,
+				FA16651E1D22280D005F1A6D /* NSDate+WJYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -611,6 +639,7 @@
 			files = (
 				FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */,
 				FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */,
+				FA05D44B1D1D465A00712025 /* WJYTopicsCell.xib in Resources */,
 				FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */,
 				FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */,
 				FAB01E801D102BDF00710854 /* Info.plist in Resources */,
@@ -700,14 +729,18 @@
 				FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */,
 				FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */,
 				FA1AB83D1D17BFB1008F7AC2 /* Foundation+Log.m in Sources */,
+				FA05D4431D1D127800712025 /* WJYTopicsModel.m in Sources */,
 				FA1AB8451D1818E7008F7AC2 /* WJYVerticalButton.m in Sources */,
 				FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */,
 				FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */,
+				FA05D4461D1D34B500712025 /* WJYConst.m in Sources */,
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA1EA8E31D1B92E8006B6E24 /* WJYWordViewController.m in Sources */,
 				FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
 				FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */,
+				FA05D44A1D1D465A00712025 /* WJYTopicsCell.m in Sources */,
+				FA1665231D227CD5005F1A6D /* WJYTopicViewController.m in Sources */,
 				FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */,
 				FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
@@ -715,6 +748,7 @@
 				FA1EA8DA1D1B92AF006B6E24 /* WJYAllViewController.m in Sources */,
 				FA989CCA1D10268400752CE7 /* AppDelegate.m in Sources */,
 				FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */,
+				FA16651F1D22280D005F1A6D /* NSDate+WJYExtension.m in Sources */,
 				FA1EA8E01D1B92D5006B6E24 /* WJYPictureViewController.m in Sources */,
 				FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */,
 				FA1EA8DD1D1B92C5006B6E24 /* WJYVoiceViewController.m in Sources */,

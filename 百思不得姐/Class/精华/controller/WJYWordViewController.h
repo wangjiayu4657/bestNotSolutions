@@ -6,8 +6,8 @@
 //  Copyright © 2016年 fangjs. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WJYTopicViewController.h"
 
-@interface WJYWordViewController : UITableViewController
+@interface WJYWordViewController : WJYTopicViewController
 
 @end
