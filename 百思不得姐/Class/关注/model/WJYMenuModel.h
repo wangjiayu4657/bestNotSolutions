@@ -11,7 +11,7 @@
 @interface WJYMenuModel : NSObject
 
 /**id*/
-@property (assign , nonatomic) NSInteger id;
+@property (assign , nonatomic) NSInteger ID;
 /**数量*/
 @property (assign , nonatomic) NSInteger count;
 /**名称*/

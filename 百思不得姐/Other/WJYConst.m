@@ -12,3 +12,9 @@ CGFloat const topicCellMargin = 10;
 CGFloat const topicCellBottomBarHeight = 50;
 /** 精华 - cell - 文字内容的 Y*/
 CGFloat const topicCellTextY = 65;
+
+/** 精华 - cell - 最大图片的高度*/
+CGFloat const topicMaxPictureHeight = 1000;
+
+/** 精华 - cell - 一旦图片的高度大于最大高度的话就设为topicPictureBreakHeight*/
+CGFloat const topicPictureBreakHeight = 250;

@@ -8,6 +8,7 @@
 
 #import "WJYTopicsCell.h"
 #import "WJYTopicsModel.h"
+#import "WJYPictureViews.h"
 
 @interface WJYTopicsCell()
 /** 图片*/
@@ -31,10 +32,23 @@
 /** 文字内容*/
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
 
+/**pictureView*/
+@property (weak , nonatomic) WJYPictureViews *pictureView;
+
 @end
 
 
 @implementation WJYTopicsCell
+
+
+-(UIView *)pictureView{
+    if (!_pictureView) {
+        WJYPictureViews *pictureView = [WJYPictureViews pictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
 
 - (void)awakeFromNib {
     UIImageView *bgImageView = [[UIImageView alloc] init];
@@ -49,36 +63,27 @@
 
 - (void)setTopic:(WJYTopicsModel *)topic {
     _topic = topic;
-    
+
     self.isVipView.hidden = !topic.is_vip;
     
     [self.profieldImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
+   
     self.createTimeLabel.text = topic.create_time;
+    
     //文字内容
     self.text_label.text = topic.text;
-    
-    
+
     [self setUpTitleOfButton:self.dingButton withCount:topic.ding withTitle:@"定"];
     [self setUpTitleOfButton:self.caiButton withCount:topic.cai withTitle:@"踩"];
     [self setUpTitleOfButton:self.shareButton withCount:topic.repost withTitle:@"分享"];
     [self setUpTitleOfButton:self.commentButton withCount:topic.comment withTitle:@"评论"];
     
-   
-    
-    [self compareTime:topic.create_time];
+    if (topic.type == TopicTypePicture) {
+        self.pictureView.topicModel = topic;
+        self.pictureView.frame = topic.pictureViewFrame;
+    }
 }
-
-- (void) compareTime:(NSString *) time {
-    NSDate *currentDate = [NSDate date];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    NSDate *createTime = [formatter dateFromString:time];
-    NSDateComponents *components = [currentDate componentFromDate:createTime];
-//    NSLog(@"%@",components);
-}
-
 
 - (void) setUpTitleOfButton:(UIButton *)button  withCount:(NSInteger)count withTitle:(NSString *) title {
    if (count == 0) {

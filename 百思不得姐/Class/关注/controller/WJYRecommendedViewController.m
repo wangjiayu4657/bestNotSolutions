@@ -68,7 +68,7 @@
     param[@"a"] = @"list";
     param[@"c"] = @"subscribe";
     param[@"page"] = @(model.currentPage);
-    param[@"category_id"] = @(model.id);
+    param[@"category_id"] = @(model.ID);
     self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
         if (!error) {
@@ -99,7 +99,7 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:4];
     param[@"a"] = @"list";
     param[@"c"] = @"subscribe";
-    param[@"category_id"] = @(model.id);
+    param[@"category_id"] = @(model.ID);
     param[@"page"] = @(++model.currentPage);
     self.params = param;
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {

@@ -60,8 +60,6 @@
 
 //设置顶部的标签
 - (void) setUpTitleView {
-    
-    NSLog(@"%@",self.childViewControllers);
     //标题按钮的背景
     UIView *titleView = [[UIView alloc] init];
     titleView.width = self.view.width;
@@ -79,7 +77,6 @@
     [titleView addSubview:indcatorView];
     self.indcatorView = indcatorView;
    
-//    NSArray *titlesArray = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
     CGFloat width = titleView.width / self.childViewControllers.count;
     CGFloat height = titleView.height;
     for (int i = 0; i < self.childViewControllers.count; i++) {

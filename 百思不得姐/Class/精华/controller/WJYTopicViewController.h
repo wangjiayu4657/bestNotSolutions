@@ -8,15 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-typedef enum{
-    TopicTypeAll = 1,
-    TopicTypePicture = 10,
-    TopicTypeWord = 29,
-    TopicTypeVoice = 31,
-    TopicTypeVedio = 41
-}TopicType ;
-
 @interface WJYTopicViewController : UITableViewController
 
 /**帖子类型*/

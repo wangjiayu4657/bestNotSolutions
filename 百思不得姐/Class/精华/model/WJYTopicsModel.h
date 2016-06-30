@@ -6,7 +6,7 @@
 //  Copyright © 2016年 fangjs. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WJYTopicsModel : NSObject
 
@@ -36,5 +36,34 @@
 
 /**是否为会员*/
 @property (assign , nonatomic , getter=is_vip)  BOOL is_vip;
+
+/**帖子类型*/
+@property (assign , readonly , nonatomic)  CGFloat type;
+
+/**小图片*/
+@property (copy , nonatomic) NSString *smallImage;
+
+/**中图片*/
+@property (copy , nonatomic) NSString *middleImage;
+
+/**大图片*/
+@property (copy , nonatomic) NSString *largeImage;
+
+/**图片的高度*/
+@property (assign , nonatomic)  NSInteger height;
+
+/**图片的宽度*/
+@property (assign , nonatomic)  NSInteger width;
+/***************************** 添加额外的副主属性 *******************************/
+
+/**cell 的高度*/
+@property (assign , readonly , nonatomic)  CGFloat cellHeight;
+
+/**图片的Frame*/
+@property (assign , readonly , nonatomic)  CGRect pictureViewFrame;
+
+/**是否为大图的标志*/
+@property (assign , nonatomic , getter=isBigPicture) BOOL isBigPicture;
+
 
 @end

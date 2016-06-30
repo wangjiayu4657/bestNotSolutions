@@ -21,7 +21,6 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSInteger currentDate = [calendar component:NSCalendarUnitYear fromDate:[NSDate date]];
     NSInteger selfDate = [calendar component:NSCalendarUnitYear fromDate:self];
-    NSLog(@"currentDate:%ld  selfDate:%ld",currentDate,selfDate);
     return currentDate == selfDate;
 }
 

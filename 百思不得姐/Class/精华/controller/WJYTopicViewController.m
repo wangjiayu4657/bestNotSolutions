@@ -1,3 +1,4 @@
+
 //
 //  WJYWordViewController.m
 //  百思不得姐
@@ -76,7 +77,6 @@
     
     HttpClient *aClient = [HttpClient sharedClient];
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
-        NSLog(@"responseObject:%@",responseObject);
         if (!error) {
             if (self.params != param) return;
             self.maxtime = responseObject[@"info"][@"maxtime"];
@@ -135,25 +135,16 @@
     return self.dataSource.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WJYTopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:topicCellID];
-    
     cell.topic = self.dataSource[indexPath.row];
-    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     WJYTopicsModel *model = self.dataSource[indexPath.row];
-    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * topicCellMargin, MAXFLOAT);
-    //文字内容的高度
-    CGFloat textHeight = [model.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
-    
-    CGFloat cellHeight = textHeight + topicCellTextY + topicCellBottomBarHeight + 2 * topicCellMargin;
-    
-    return cellHeight;
+    return model.cellHeight;
 }
 
 
