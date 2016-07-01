@@ -7,7 +7,7 @@
 //
 
 #import "WJYTabBar.h"
-
+#import "WJYPublishViewController.h"
 @interface WJYTabBar ()
 
 /**发布按钮*/
@@ -22,6 +22,7 @@
         self.publishButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [self.publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        [self.publishButton addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
         self.publishButton.size = self.publishButton.currentBackgroundImage.size;
         [self addSubview:self.publishButton];
         
@@ -33,6 +34,10 @@
         self.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
     }
     return self;
+}
+
+- (void) publishClick {
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[WJYPublishViewController alloc] init] animated:NO completion:nil];
 }
 
 - (void)layoutSubviews {

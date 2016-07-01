@@ -65,5 +65,8 @@
 /**是否为大图的标志*/
 @property (assign , nonatomic , getter=isBigPicture) BOOL isBigPicture;
 
+/**图片的下载进度*/
+@property (assign , nonatomic)  CGFloat pictureProgress;
+
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WJYTopicsModel;
 @interface WJYShowPictureViewController : UIViewController
-
+/**数据模型*/
+@property (strong , nonatomic)  WJYTopicsModel *topicModel;
 @end

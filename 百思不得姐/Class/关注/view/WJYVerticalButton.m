@@ -11,7 +11,18 @@
 @implementation WJYVerticalButton
 
 - (void)awakeFromNib {
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self setup];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void) setup {
+     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 
