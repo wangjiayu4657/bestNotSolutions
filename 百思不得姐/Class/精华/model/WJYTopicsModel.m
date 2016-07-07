@@ -14,6 +14,7 @@
 //    CGRect _pictureViewFrame;
 }
 
+//将请求参数中对应的key转换成模型中对应的key(模型中的key 与请求返回数据中的 key 不同时)
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{
              @"smallImage":@"image0",
@@ -22,6 +23,10 @@
              };
 }
 
+//将数组转换成模型
++ (NSDictionary *)mj_objectClassInArray {
+    return @{ @"top_cmt" : @"WJYComment"};
+}
 
 -(NSString *)create_time {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -59,19 +64,28 @@
         
        _cellHeight = textHeight + topicCellTextY + topicCellMargin;
         
-        if (self.type == TopicTypePicture) {
-            CGFloat pictureViweX = topicCellMargin;
-            //图片的Y值
-            CGFloat pictureViewY = textHeight + topicCellTextY + topicCellMargin;
-            CGFloat pictureViewW = maxSize.width;
-            CGFloat pictureViewH = pictureViewW * self.height / self.width;
-            if (pictureViewH > topicMaxPictureHeight) {
-                pictureViewH = topicPictureBreakHeight;
+        CGFloat ViweX = topicCellMargin;
+        CGFloat ViewY = textHeight + topicCellTextY + topicCellMargin;
+        CGFloat ViewW = maxSize.width;
+        CGFloat ViewH = ViewW * self.height / self.width;
+        CGRect rect = CGRectMake(ViweX, ViewY, ViewW, ViewH);
+        
+        if (self.type == TopicTypePicture) {//图片帖子控件的高度
+            if (ViewH > topicMaxPictureHeight) {
+                ViewH = topicPictureBreakHeight;
                 self.isBigPicture = YES;
             }
-            _pictureViewFrame = CGRectMake(pictureViweX, pictureViewY, pictureViewW, pictureViewH);
-            _cellHeight += pictureViewH + topicCellMargin;
+            _pictureViewFrame = rect;
+            _cellHeight += ViewH + topicCellMargin;
+        }else if (self.type == TopicTypeVoice) {//音频帖子控件的高度
+            _voiceViewFrame = rect;
+            _cellHeight += ViewH + topicCellMargin;
+        }else if (self.type == TopicTypeVedio) {//视频帖子控件的高度
+            _videoViewFrame = rect;
+            _cellHeight += ViewH + topicCellMargin;
         }
+        
+      
          //最后在加上底部工具条的高度就是 cell 的高度
          _cellHeight += topicCellBottomBarHeight + topicCellMargin;
     }

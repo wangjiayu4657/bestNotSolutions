@@ -132,7 +132,7 @@
     allVC.title = @"全部";
     [self addChildViewController:allVC];
     
-    WJYVideoViewController *videoVC = [[WJYVideoViewController alloc] init];
+    WJYTopicVideoViewController *videoVC = [[WJYTopicVideoViewController alloc] init];
     videoVC.title = @"视频";
     [self addChildViewController:videoVC];
     

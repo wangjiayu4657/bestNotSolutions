@@ -1,5 +1,5 @@
 //
-//  WJYVideoViewController.h
+//  WJYTopicVideoViewController.h
 //  百思不得姐
 //
 //  Created by fangjs on 16/6/23.
@@ -8,6 +8,6 @@
 
 #import "WJYTopicViewController.h"
 
-@interface WJYVideoViewController : WJYTopicViewController
+@interface WJYTopicVideoViewController : WJYTopicViewController
 
 @end

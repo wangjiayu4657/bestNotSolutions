@@ -6,12 +6,12 @@
 //  Copyright © 2016年 fangjs. All rights reserved.
 //
 
-#import "WJYPictureViews.h"
+#import "WJYTopicPictureViews.h"
 #import "WJYTopicsModel.h"
 #import "DALabeledCircularProgressView.h"
 #import "WJYShowPictureViewController.h"
 
-@interface WJYPictureViews ()
+@interface WJYTopicPictureViews ()
 @property (weak, nonatomic) IBOutlet UIImageView *gifImage;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UIButton *seeLargeButton;
@@ -21,7 +21,7 @@
 @end
 
 
-@implementation WJYPictureViews
+@implementation WJYTopicPictureViews
 
 
 + (instancetype)pictureView {

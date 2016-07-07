@@ -24,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIDynamicAnimator;
+    
     //获取图片的尺寸
     CGFloat pictureWidth = self.topicModel.width;
     CGFloat pictureHeight = self.topicModel.height;

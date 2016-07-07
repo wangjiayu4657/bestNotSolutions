@@ -18,3 +18,6 @@ CGFloat const topicMaxPictureHeight = 1000;
 
 /** 精华 - cell - 一旦图片的高度大于最大高度的话就设为topicPictureBreakHeight*/
 CGFloat const topicPictureBreakHeight = 250;
+
+NSString * const WJYUserSexMale = @"m";
+NSString * const WJYUserSexFemale = @"f";

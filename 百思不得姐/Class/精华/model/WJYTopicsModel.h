@@ -54,12 +54,32 @@
 
 /**图片的宽度*/
 @property (assign , nonatomic)  NSInteger width;
+
+/**音频时长*/
+@property (assign , nonatomic)  NSInteger voicetime;
+
+/**视频时长*/
+@property (assign , nonatomic)  NSInteger videotime;
+
+/**播放次数*/
+@property (assign , nonatomic)  NSInteger playcount;
+
+/**音频资源地址*/
+@property (copy , nonatomic)  NSString *voiceuri;
+
+/**视频资源地址*/
+@property (copy , nonatomic)  NSString *videouri;
+
+/**最热评论*/
+@property (strong , nonatomic)  NSArray *top_cmt;
+
+
 /***************************** 添加额外的副主属性 *******************************/
 
 /**cell 的高度*/
 @property (assign , readonly , nonatomic)  CGFloat cellHeight;
 
-/**图片的Frame*/
+/**图片帖子控件的Frame*/
 @property (assign , readonly , nonatomic)  CGRect pictureViewFrame;
 
 /**是否为大图的标志*/
@@ -68,5 +88,11 @@
 /**图片的下载进度*/
 @property (assign , nonatomic)  CGFloat pictureProgress;
 
+
+/**音频帖子控件的Frame*/
+@property (assign , readonly , nonatomic)  CGRect voiceViewFrame;
+
+/**视频帖子控件的Frame*/
+@property (assign , readonly , nonatomic)  CGRect videoViewFrame;
 
 @end

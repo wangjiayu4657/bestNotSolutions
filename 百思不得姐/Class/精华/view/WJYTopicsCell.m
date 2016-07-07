@@ -8,7 +8,9 @@
 
 #import "WJYTopicsCell.h"
 #import "WJYTopicsModel.h"
-#import "WJYPictureViews.h"
+#import "WJYTopicPictureViews.h"
+#import "WJYTopicVocieView.h"
+#import "WJYTopicVideoViews.h"
 
 @interface WJYTopicsCell()
 /** 图片*/
@@ -33,21 +35,43 @@
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
 
 /**pictureView*/
-@property (weak , nonatomic) WJYPictureViews *pictureView;
+@property (weak , nonatomic) WJYTopicPictureViews *pictureView;
 
+/**voiceView*/
+@property (weak , nonatomic) WJYTopicVocieView *voiceView;
+
+/**voiceView*/
+@property (weak , nonatomic) WJYTopicVideoViews *videoView;
 @end
 
 
 @implementation WJYTopicsCell
 
-
--(UIView *)pictureView{
+-(WJYTopicPictureViews *)pictureView{
     if (!_pictureView) {
-        WJYPictureViews *pictureView = [WJYPictureViews pictureView];
+        WJYTopicPictureViews *pictureView = [WJYTopicPictureViews pictureView];
         [self.contentView addSubview:pictureView];
         _pictureView = pictureView;
     }
     return _pictureView;
+}
+
+-(WJYTopicVocieView *)voiceView{
+    if (!_voiceView) {
+        WJYTopicVocieView *voiceView = [WJYTopicVocieView voiceView];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
+}
+
+-(WJYTopicVideoViews *)videoView{
+    if (!_videoView) {
+        WJYTopicVideoViews *videoView = [WJYTopicVideoViews videoView];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;
+    }
+    return _videoView;
 }
 
 - (void)awakeFromNib {
@@ -63,15 +87,15 @@
 
 - (void)setTopic:(WJYTopicsModel *)topic {
     _topic = topic;
-
+    //是否需要显示 vip 标志
     self.isVipView.hidden = !topic.is_vip;
     
     [self.profieldImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
-   
+    //帖子的创建时间
     self.createTimeLabel.text = topic.create_time;
     
-    //文字内容
+    //帖子文字内容
     self.text_label.text = topic.text;
 
     [self setUpTitleOfButton:self.dingButton withCount:topic.ding withTitle:@"定"];
@@ -79,9 +103,29 @@
     [self setUpTitleOfButton:self.shareButton withCount:topic.repost withTitle:@"分享"];
     [self setUpTitleOfButton:self.commentButton withCount:topic.comment withTitle:@"评论"];
     
-    if (topic.type == TopicTypePicture) {
+    //cell根据类型的不同加载不同的内容
+    if (topic.type == TopicTypePicture) {//图片
+        self.pictureView.hidden = NO;
         self.pictureView.topicModel = topic;
         self.pictureView.frame = topic.pictureViewFrame;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (topic.type == TopicTypeVoice) {//音频
+        self.voiceView.hidden = NO;
+        self.voiceView.topicModel = topic;
+        self.voiceView.frame = topic.voiceViewFrame;
+        self.pictureView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (topic.type == TopicTypeVedio) {//视频
+        self.videoView.hidden = NO;
+        self.videoView.topicModel = topic;
+        self.videoView.frame = topic.videoViewFrame;
+        self.voiceView.hidden = YES;
+        self.pictureView.hidden = YES;
+    }else {//帖子
+        self.pictureView.hidden = YES;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = YES;
     }
 }
 

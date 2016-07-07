@@ -1,21 +1,19 @@
 //
-//  WJYPictureView.h
+//  WJYTopicVideoView.h
 //  百思不得姐
 //
-//  Created by fangjs on 16/6/30.
+//  Created by fangjs on 16/7/7.
 //  Copyright © 2016年 fangjs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
 @class WJYTopicsModel;
 
-@interface WJYPictureViews : UIView
+@interface WJYTopicVideoViews : UIView
 
-/**数据模型*/
+/** 数据模型*/
 @property (strong , nonatomic)  WJYTopicsModel *topicModel;
 
-
-+ (instancetype) pictureView;
++ (instancetype)videoView;
 
 @end

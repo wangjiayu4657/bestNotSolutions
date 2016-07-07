@@ -28,3 +28,13 @@ UIKIT_EXTERN CGFloat const topicMaxPictureHeight;
 
 /** 精华 - cell - 一旦图片的高度大于最大高度的话就设为topicPictureBreakHeight*/
 UIKIT_EXTERN CGFloat const topicPictureBreakHeight;
+
+
+/**WJYUser 模型中 性别的属性值*/
+UIKIT_EXTERN  NSString * const WJYUserSexMale;
+UIKIT_EXTERN  NSString * const WJYUserSexFemale;
+
+
+
+
+
