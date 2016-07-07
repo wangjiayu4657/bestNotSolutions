@@ -7,7 +7,7 @@
 //
 
 #import "WJYTabBar.h"
-#import "WJYPublishViewController.h"
+#import "WJYPublishView.h"
 @interface WJYTabBar ()
 
 /**发布按钮*/
@@ -37,7 +37,10 @@
 }
 
 - (void) publishClick {
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[WJYPublishViewController alloc] init] animated:NO completion:nil];
+    WJYPublishView *publishView = [WJYPublishView publishView];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    publishView.frame = window.bounds;
+    [window addSubview:publishView];
 }
 
 - (void)layoutSubviews {

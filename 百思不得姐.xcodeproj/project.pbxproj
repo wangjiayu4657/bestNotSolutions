@@ -45,8 +45,8 @@
 		FA8A01F31D18F2A20082FECD /* WJYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F21D18F2A20082FECD /* WJYTextField.m */; };
 		FA8A01F71D19449B0082FECD /* WJYPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F61D19449B0082FECD /* WJYPushGuideView.m */; };
 		FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */; };
-		FA9006F61D265C060033C937 /* WJYPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9006F41D265C060033C937 /* WJYPublishViewController.m */; };
-		FA9006F71D265C060033C937 /* WJYPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9006F51D265C060033C937 /* WJYPublishViewController.xib */; };
+		FA9006F61D265C060033C937 /* WJYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9006F41D265C060033C937 /* WJYPublishView.m */; };
+		FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9006F51D265C060033C937 /* WJYPublishView.xib */; };
 		FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */; };
 		FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CA51D10268400752CE7 /* WJYMeViewController.m */; };
 		FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CAB1D10268400752CE7 /* WJYNewViewController.m */; };
@@ -153,9 +153,9 @@
 		FA8A01F51D19449B0082FECD /* WJYPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPushGuideView.h; sourceTree = "<group>"; };
 		FA8A01F61D19449B0082FECD /* WJYPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPushGuideView.m; sourceTree = "<group>"; };
 		FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPushGuideView.xib; sourceTree = "<group>"; };
-		FA9006F31D265C060033C937 /* WJYPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishViewController.h; sourceTree = "<group>"; };
-		FA9006F41D265C060033C937 /* WJYPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishViewController.m; sourceTree = "<group>"; };
-		FA9006F51D265C060033C937 /* WJYPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishViewController.xib; sourceTree = "<group>"; };
+		FA9006F31D265C060033C937 /* WJYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishView.h; sourceTree = "<group>"; };
+		FA9006F41D265C060033C937 /* WJYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishView.m; sourceTree = "<group>"; };
+		FA9006F51D265C060033C937 /* WJYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishView.xib; sourceTree = "<group>"; };
 		FA989CA01D10268400752CE7 /* WJYFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYFriendTrendsViewController.h; path = ../WJYFriendTrendsViewController.h; sourceTree = "<group>"; };
 		FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYFriendTrendsViewController.m; path = ../WJYFriendTrendsViewController.m; sourceTree = "<group>"; };
 		FA989CA41D10268400752CE7 /* WJYMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYMeViewController.h; sourceTree = "<group>"; };
@@ -535,9 +535,9 @@
 				FA989CBE1D10268400752CE7 /* WJYTabBarController.m */,
 				FA1F37331D113B1A007EE546 /* WJYNavigationController.h */,
 				FA1F37341D113B1A007EE546 /* WJYNavigationController.m */,
-				FA9006F31D265C060033C937 /* WJYPublishViewController.h */,
-				FA9006F41D265C060033C937 /* WJYPublishViewController.m */,
-				FA9006F51D265C060033C937 /* WJYPublishViewController.xib */,
+				FA9006F31D265C060033C937 /* WJYPublishView.h */,
+				FA9006F41D265C060033C937 /* WJYPublishView.m */,
+				FA9006F51D265C060033C937 /* WJYPublishView.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -671,7 +671,7 @@
 				FAA919F01D1254E30003AB17 /* WJYMenuCell.xib in Resources */,
 				FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */,
 				FA1AB8421D181026008F7AC2 /* WJYLoginRegisterViewController.xib in Resources */,
-				FA9006F71D265C060033C937 /* WJYPublishViewController.xib in Resources */,
+				FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */,
 				FA2B2FDD1D253A950026C72B /* WJYShowPictureViewController.xib in Resources */,
 				FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */,
 				FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */,
@@ -764,7 +764,7 @@
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA1EA8E31D1B92E8006B6E24 /* WJYWordViewController.m in Sources */,
 				FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */,
-				FA9006F61D265C060033C937 /* WJYPublishViewController.m in Sources */,
+				FA9006F61D265C060033C937 /* WJYPublishView.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
 				FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */,
 				FA05D44A1D1D465A00712025 /* WJYTopicsCell.m in Sources */,

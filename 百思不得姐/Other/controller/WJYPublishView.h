@@ -1,5 +1,5 @@
 //
-//  WJYPublishViewController.h
+//  WJYPublishView.h
 //  百思不得姐
 //
 //  Created by fangjs on 16/7/1.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WJYPublishViewController : UIViewController
+@interface WJYPublishView : UIView
+
++ (instancetype) publishView;
 
 @end

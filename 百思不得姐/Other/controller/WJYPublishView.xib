@@ -5,13 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WJYPublishViewController">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WJYPublishViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="WJYPublishView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -21,8 +17,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75H-Ui-Y8C">
                     <rect key="frame" x="156" y="530" width="289" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="JiT-BD-Dxz"/>
-                        <constraint firstAttribute="width" constant="289" id="Zmv-9v-lwi"/>
+                        <constraint firstAttribute="width" constant="289" id="WZD-Py-YeI"/>
+                        <constraint firstAttribute="height" constant="40" id="nSp-Ps-1YY"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" backgroundImage="shareButtonCancel">
@@ -30,18 +26,18 @@
                     </state>
                     <state key="highlighted" backgroundImage="shareButtonCancelClick"/>
                     <connections>
-                        <action selector="cancleButton" destination="-1" eventType="touchUpInside" id="o8x-zG-fqA"/>
+                        <action selector="cancleButton" destination="i5M-Pr-FkT" eventType="touchUpInside" id="ZGN-Yt-ZYW"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="dRH-yq-GE6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6gm-l4-xzR"/>
+                <constraint firstItem="75H-Ui-Y8C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Brc-9f-3Ph"/>
                 <constraint firstItem="dRH-yq-GE6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fok-SR-ymA"/>
-                <constraint firstItem="75H-Ui-Y8C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZAd-4a-fIu"/>
                 <constraint firstAttribute="bottom" secondItem="dRH-yq-GE6" secondAttribute="bottom" id="bhm-th-FR1"/>
-                <constraint firstAttribute="bottom" secondItem="75H-Ui-Y8C" secondAttribute="bottom" constant="30" id="ova-3z-Lhc"/>
                 <constraint firstAttribute="trailing" secondItem="dRH-yq-GE6" secondAttribute="trailing" id="sRO-m8-aR8"/>
+                <constraint firstAttribute="bottom" secondItem="75H-Ui-Y8C" secondAttribute="bottom" constant="30" id="w8e-oT-ZiY"/>
             </constraints>
         </view>
     </objects>

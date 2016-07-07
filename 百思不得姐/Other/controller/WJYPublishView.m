@@ -1,26 +1,33 @@
 //
-//  WJYPublishViewController.m
+//  WJYPublishView.m
 //  百思不得姐
 //
 //  Created by fangjs on 16/7/1.
 //  Copyright © 2016年 fangjs. All rights reserved.
 //
 
-#import "WJYPublishViewController.h"
+#import "WJYPublishView.h"
 #import "WJYVerticalButton.h"
 
+#define WJYWindowControllerView  [UIApplication sharedApplication].keyWindow.rootViewController.view
 
 static CGFloat const springAnimationTime = 0.1;
 static CGFloat const springAnmationFactors = 10;
 
-@interface WJYPublishViewController ()
+@interface WJYPublishView ()
 
 @end
 
-@implementation WJYPublishViewController
+@implementation WJYPublishView
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
++(instancetype)publishView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
+- (void)awakeFromNib {
+    WJYWindowControllerView.userInteractionEnabled = NO;
+    self.userInteractionEnabled = NO;
     
     // 数据
     NSArray *images = @[@"publish-video", @"publish-picture", @"publish-text", @"publish-audio", @"publish-review", @"publish-offline"];
@@ -42,12 +49,15 @@ static CGFloat const springAnmationFactors = 10;
     
     //中间的六个按钮
     for (int i = 0 ; i < images.count ; i++) {
+        
         WJYVerticalButton * button = [WJYVerticalButton buttonWithType:UIButtonTypeCustom];
-        [self.view addSubview:button];
+        [self addSubview:button];
+        button.tag = i;
         button.titleLabel.font = [UIFont systemFontOfSize:14];
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         //列数
         int row = i % count;
         //行数
@@ -75,7 +85,7 @@ static CGFloat const springAnmationFactors = 10;
     
     
     UIImageView * sloganImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
-    [self.view addSubview:sloganImageView];
+    [self addSubview:sloganImageView];
     
     CGFloat sloganImageViewX = screenWidth * 0.5;
     CGFloat sloganImageViewEndY = screenHeight * 0.2;
@@ -87,13 +97,75 @@ static CGFloat const springAnmationFactors = 10;
     sAnimation.springSpeed = springAnmationFactors;
     sAnimation.springBounciness = springAnmationFactors;
     sAnimation.beginTime = CACurrentMediaTime() + images.count * springAnimationTime;
+    [sAnimation setCompletionBlock:^(POPAnimation *animation, BOOL finished) {
+        self.userInteractionEnabled = YES;
+        WJYWindowControllerView.userInteractionEnabled = YES;
+    }];
     
     [sloganImageView pop_addAnimation:sAnimation forKey:nil];
 }
 
-- (IBAction)cancleButton {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void) buttonClick:(UIButton *) button {
+    [self cancleCompletion:^{
+        switch (button.tag) {
+            case 0:
+                NSLog(@"发视频");
+                break;
+            case 1:
+                NSLog(@"发图片");
+                break;
+            case 2:
+                NSLog(@"发段子");
+                break;
+            case 3:
+                NSLog(@"发声音");
+                break;
+            case 4:
+                NSLog(@"审贴");
+                break;
+            case 5:
+                NSLog(@"离线下载");
+                break;
+                
+            default:
+                break;
+        }
+    }];
 }
 
+- (void) cancleCompletion:(void(^)())completion {
+    self.userInteractionEnabled = NO;
+    WJYWindowControllerView.userInteractionEnabled = NO;
+    int index = 2;
+    for (int i = index; i < self.subviews.count; i++) {
+        UIView *btn = self.subviews[i];
+        
+        CGFloat sloganImageViewEndY = screenHeight + btn.centerY;
+        POPBasicAnimation *sAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        //动画执行的节奏(先慢后快)
+        //sAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        sAnimation.beginTime = CACurrentMediaTime() + ( i - index )* springAnimationTime;
+        sAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(btn.centerX, sloganImageViewEndY)];
+        [btn pop_addAnimation:sAnimation forKey:nil];
+        
+        if (i == self.subviews.count - 1) {
+            [sAnimation setCompletionBlock:^(POPAnimation *animation, BOOL finished) {
+                WJYWindowControllerView.userInteractionEnabled = YES;
+                [self removeFromSuperview];
+                if (completion) {
+                    completion();
+                }
+            }];
+        }
+    }
+}
+
+- (IBAction)cancleButton {
+    [self cancleCompletion:nil];
+}
+
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self cancleCompletion:nil];
+}
 
 @end
