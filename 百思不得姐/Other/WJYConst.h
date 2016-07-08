@@ -36,5 +36,6 @@ UIKIT_EXTERN  NSString * const WJYUserSexFemale;
 
 
 
-
+/** 精华 - cell - 最热评论标题的高度*/
+UIKIT_EXTERN CGFloat const topicCellCommentTitleHeight;
 

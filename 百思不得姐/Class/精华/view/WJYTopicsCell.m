@@ -11,6 +11,8 @@
 #import "WJYTopicPictureViews.h"
 #import "WJYTopicVocieView.h"
 #import "WJYTopicVideoViews.h"
+#import "WJYComment.h"
+#import "WJYUser.h"
 
 @interface WJYTopicsCell()
 /** 图片*/
@@ -33,6 +35,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *isVipView;
 /** 文字内容*/
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
+/** 最热评论内容*/
+@property (weak, nonatomic) IBOutlet UILabel *topicCmtContentLabel;
+/** 最热评论的父控件*/
+@property (weak, nonatomic) IBOutlet UIView *topicBackView;
 
 /**pictureView*/
 @property (weak , nonatomic) WJYTopicPictureViews *pictureView;
@@ -97,6 +103,15 @@
     
     //帖子文字内容
     self.text_label.text = topic.text;
+    
+    //最热评论
+    WJYComment *comment = [self.topic.top_cmt firstObject];
+    if (comment) {//如果最热评论有值则显示内容
+        self.topicBackView.hidden = NO;
+         self.topicCmtContentLabel.text = [NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content];
+    }else {//如果没有值的话则隐藏不显示
+        self.topicBackView.hidden = YES;
+    }
 
     [self setUpTitleOfButton:self.dingButton withCount:topic.ding withTitle:@"定"];
     [self setUpTitleOfButton:self.caiButton withCount:topic.cai withTitle:@"踩"];
@@ -129,7 +144,7 @@
     }
 }
 
-- (void) setUpTitleOfButton:(UIButton *)button  withCount:(NSInteger)count withTitle:(NSString *) title {
+- (void) setUpTitleOfButton:(UIButton *)button withCount:(NSInteger)count withTitle:(NSString *) title {
    if (count == 0) {
        
     }else  if (count > 10000) {

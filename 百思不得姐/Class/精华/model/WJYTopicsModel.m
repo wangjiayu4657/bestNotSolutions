@@ -7,6 +7,8 @@
 //
 
 #import "WJYTopicsModel.h"
+#import "WJYComment.h"
+#import "WJYUser.h"
 
 @implementation WJYTopicsModel
 {
@@ -85,6 +87,13 @@
             _cellHeight += ViewH + topicCellMargin;
         }
         
+        WJYComment *comment = [self.top_cmt firstObject];
+        if (comment) {
+             NSString *content = [NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content];
+             CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+            NSLog(@"%f",contentH);
+            _cellHeight += topicCellCommentTitleHeight + contentH + topicCellMargin;
+        }
       
          //最后在加上底部工具条的高度就是 cell 的高度
          _cellHeight += topicCellBottomBarHeight + topicCellMargin;

@@ -10,4 +10,13 @@
 
 @interface WJYUser : NSObject
 
+/** 用户名*/
+@property (copy , nonatomic)  NSString *username;
+
+/**性别*/
+@property (copy , nonatomic)  NSString *sex;
+
+/**用户头像*/
+@property (copy , nonatomic)  NSString *profile_image;
+
 @end
