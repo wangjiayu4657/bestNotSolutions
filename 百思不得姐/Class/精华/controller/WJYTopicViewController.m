@@ -10,6 +10,8 @@
 #import "WJYTopicViewController.h"
 #import "WJYTopicsModel.h"
 #import "WJYTopicsCell.h"
+#import "WJYCommentViewController.h"
+
 
 @interface WJYTopicViewController ()
 
@@ -147,5 +149,11 @@
     return model.cellHeight;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WJYCommentViewController *commentVC = [[WJYCommentViewController alloc] init];
+    commentVC.topicModel = self.dataSource[indexPath.row];
+    [self.navigationController pushViewController:commentVC animated:YES];
+}
 
 @end

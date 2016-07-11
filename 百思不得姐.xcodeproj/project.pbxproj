@@ -61,6 +61,8 @@
 		FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CBE1D10268400752CE7 /* WJYTabBarController.m */; };
 		FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA989CBF1D10268400752CE7 /* Images.xcassets */; };
 		FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CC51D10268400752CE7 /* WJYTabBar.m */; };
+		FA999FE91D336CF900A1B1D0 /* WJYCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA999FE71D336CF900A1B1D0 /* WJYCommentViewController.m */; };
+		FA999FEA1D336CF900A1B1D0 /* WJYCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA999FE81D336CF900A1B1D0 /* WJYCommentViewController.xib */; };
 		FAA441501D2E6B3400B05ABA /* WJYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA4414F1D2E6B3400B05ABA /* WJYUser.m */; };
 		FAA441531D2E6B5600B05ABA /* WJYComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA441521D2E6B5600B05ABA /* WJYComment.m */; };
 		FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA919ED1D1254E30003AB17 /* WJYMenuCell.m */; };
@@ -189,6 +191,9 @@
 		FA989CC51D10268400752CE7 /* WJYTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTabBar.m; sourceTree = "<group>"; };
 		FA989CD31D10277300752CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		FA989CD71D10277300752CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Base; path = Base.lproj/PrefixHeader.pch; sourceTree = "<group>"; };
+		FA999FE61D336CF900A1B1D0 /* WJYCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYCommentViewController.h; sourceTree = "<group>"; };
+		FA999FE71D336CF900A1B1D0 /* WJYCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYCommentViewController.m; sourceTree = "<group>"; };
+		FA999FE81D336CF900A1B1D0 /* WJYCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYCommentViewController.xib; sourceTree = "<group>"; };
 		FAA4414E1D2E6B3400B05ABA /* WJYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYUser.h; sourceTree = "<group>"; };
 		FAA4414F1D2E6B3400B05ABA /* WJYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYUser.m; sourceTree = "<group>"; };
 		FAA441511D2E6B5600B05ABA /* WJYComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYComment.h; sourceTree = "<group>"; };
@@ -483,6 +488,9 @@
 				FA2B2FD91D253A950026C72B /* WJYShowPictureViewController.h */,
 				FA2B2FDA1D253A950026C72B /* WJYShowPictureViewController.m */,
 				FA2B2FDB1D253A950026C72B /* WJYShowPictureViewController.xib */,
+				FA999FE61D336CF900A1B1D0 /* WJYCommentViewController.h */,
+				FA999FE71D336CF900A1B1D0 /* WJYCommentViewController.m */,
+				FA999FE81D336CF900A1B1D0 /* WJYCommentViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -692,6 +700,7 @@
 				FA05D44B1D1D465A00712025 /* WJYTopicsCell.xib in Resources */,
 				FA4F68E61D2501E600CCB7D8 /* WJYTopicPictureViews.xib in Resources */,
 				FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */,
+				FA999FEA1D336CF900A1B1D0 /* WJYCommentViewController.xib in Resources */,
 				FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */,
 				FAB01E801D102BDF00710854 /* Info.plist in Resources */,
 				FAA919F01D1254E30003AB17 /* WJYMenuCell.xib in Resources */,
@@ -789,6 +798,7 @@
 				FA1AB8451D1818E7008F7AC2 /* WJYVerticalButton.m in Sources */,
 				FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */,
 				FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */,
+				FA999FE91D336CF900A1B1D0 /* WJYCommentViewController.m in Sources */,
 				FA05D4461D1D34B500712025 /* WJYConst.m in Sources */,
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA1EA8E31D1B92E8006B6E24 /* WJYWordViewController.m in Sources */,

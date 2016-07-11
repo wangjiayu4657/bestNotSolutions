@@ -17,4 +17,6 @@ static NSString *const topicCellID = @"topic";
 /**数据模型*/
 @property (strong , nonatomic)  WJYTopicsModel *topic;
 
++ (instancetype) cell;
+
 @end

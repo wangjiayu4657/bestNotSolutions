@@ -53,6 +53,11 @@
 
 @implementation WJYTopicsCell
 
+
++(instancetype)cell {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
 -(WJYTopicPictureViews *)pictureView{
     if (!_pictureView) {
         WJYTopicPictureViews *pictureView = [WJYTopicPictureViews pictureView];
@@ -159,8 +164,7 @@
     frame.origin.x = topicCellMargin;
     frame.origin.y += topicCellMargin;
     frame.size.width -= 2 * topicCellMargin;
-    frame.size.height -= topicCellMargin;
-    
+    frame.size.height = self.topic.cellHeight - topicCellMargin;
     [super setFrame:frame];
 }
 

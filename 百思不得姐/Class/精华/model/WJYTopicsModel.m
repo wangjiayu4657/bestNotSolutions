@@ -70,28 +70,30 @@
         CGFloat ViewY = textHeight + topicCellTextY + topicCellMargin;
         CGFloat ViewW = maxSize.width;
         CGFloat ViewH = ViewW * self.height / self.width;
-        CGRect rect = CGRectMake(ViweX, ViewY, ViewW, ViewH);
+
         
         if (self.type == TopicTypePicture) {//图片帖子控件的高度
             if (ViewH > topicMaxPictureHeight) {
                 ViewH = topicPictureBreakHeight;
                 self.isBigPicture = YES;
             }
-            _pictureViewFrame = rect;
-            _cellHeight += ViewH + topicCellMargin;
+             _pictureViewFrame = CGRectMake(ViweX, ViewY, ViewW, ViewH);
+             _cellHeight += ViewH + topicCellMargin;
+            
         }else if (self.type == TopicTypeVoice) {//音频帖子控件的高度
-            _voiceViewFrame = rect;
-            _cellHeight += ViewH + topicCellMargin;
+             _voiceViewFrame =  CGRectMake(ViweX, ViewY, ViewW, ViewH);
+             _cellHeight += ViewH + topicCellMargin;
+            
         }else if (self.type == TopicTypeVedio) {//视频帖子控件的高度
-            _videoViewFrame = rect;
-            _cellHeight += ViewH + topicCellMargin;
+             _videoViewFrame =  CGRectMake(ViweX, ViewY, ViewW, ViewH);
+             _cellHeight += ViewH + topicCellMargin;
         }
-        
+
+        //最热评论
         WJYComment *comment = [self.top_cmt firstObject];
-        if (comment) {
+        if (comment) {//如果最热评论有值则进行计算评论文字内容的高度
              NSString *content = [NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content];
              CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
-            NSLog(@"%f",contentH);
             _cellHeight += topicCellCommentTitleHeight + contentH + topicCellMargin;
         }
       
