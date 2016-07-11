@@ -15,6 +15,8 @@
 #import "WJYUser.h"
 
 @interface WJYTopicsCell()
+
+
 /** 图片*/
 @property (weak, nonatomic) IBOutlet UIImageView *profieldImageView;
 /** 昵称*/
@@ -110,10 +112,9 @@
     self.text_label.text = topic.text;
     
     //最热评论
-    WJYComment *comment = [self.topic.top_cmt firstObject];
-    if (comment) {//如果最热评论有值则显示内容
+    if (self.topic.top_cmt) {//如果最热评论有值则显示内容
         self.topicBackView.hidden = NO;
-         self.topicCmtContentLabel.text = [NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content];
+         self.topicCmtContentLabel.text = [NSString stringWithFormat:@"%@ : %@",self.topic.top_cmt.user.username,self.topic.top_cmt.content];
     }else {//如果没有值的话则隐藏不显示
         self.topicBackView.hidden = YES;
     }
@@ -168,5 +169,29 @@
     [super setFrame:frame];
 }
 
+- (IBAction)topicMore:(id)sender {
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *collection = [UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"收藏");
+    }];
+    
+    UIAlertAction *report = [UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+          NSLog(@"举报");
+    }];
+    
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+          NSLog(@"取消");
+    }];
+    
+    [alert addAction:collection];
+    [alert addAction:report];
+    [alert addAction:cancle];
+    
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+}
 
 @end

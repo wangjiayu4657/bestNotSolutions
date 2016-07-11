@@ -21,14 +21,16 @@
     return @{
              @"smallImage":@"image0",
              @"largeImage":@"image1",
-             @"middleImage":@"image2"
+             @"middleImage":@"image2",
+             @"ID" : @"id",
+             @"top_cmt":@"top_cmt[0]"
              };
 }
 
 //将数组转换成模型
-+ (NSDictionary *)mj_objectClassInArray {
-    return @{ @"top_cmt" : @"WJYComment"};
-}
+//+ (NSDictionary *)mj_objectClassInArray {
+//    return @{ @"top_cmt" : @"WJYComment"};
+//}
 
 -(NSString *)create_time {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -90,9 +92,9 @@
         }
 
         //最热评论
-        WJYComment *comment = [self.top_cmt firstObject];
-        if (comment) {//如果最热评论有值则进行计算评论文字内容的高度
-             NSString *content = [NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content];
+
+        if (self.top_cmt) {//如果最热评论有值则进行计算评论文字内容的高度
+             NSString *content = [NSString stringWithFormat:@"%@ : %@",self.top_cmt.user.username,self.top_cmt.content];
              CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
             _cellHeight += topicCellCommentTitleHeight + contentH + topicCellMargin;
         }

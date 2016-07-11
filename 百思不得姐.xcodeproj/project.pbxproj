@@ -63,6 +63,7 @@
 		FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CC51D10268400752CE7 /* WJYTabBar.m */; };
 		FA999FE91D336CF900A1B1D0 /* WJYCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA999FE71D336CF900A1B1D0 /* WJYCommentViewController.m */; };
 		FA999FEA1D336CF900A1B1D0 /* WJYCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA999FE81D336CF900A1B1D0 /* WJYCommentViewController.xib */; };
+		FA999FED1D33A67000A1B1D0 /* WJYCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA999FEC1D33A67000A1B1D0 /* WJYCommentHeaderView.m */; };
 		FAA441501D2E6B3400B05ABA /* WJYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA4414F1D2E6B3400B05ABA /* WJYUser.m */; };
 		FAA441531D2E6B5600B05ABA /* WJYComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA441521D2E6B5600B05ABA /* WJYComment.m */; };
 		FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA919ED1D1254E30003AB17 /* WJYMenuCell.m */; };
@@ -194,6 +195,8 @@
 		FA999FE61D336CF900A1B1D0 /* WJYCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYCommentViewController.h; sourceTree = "<group>"; };
 		FA999FE71D336CF900A1B1D0 /* WJYCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYCommentViewController.m; sourceTree = "<group>"; };
 		FA999FE81D336CF900A1B1D0 /* WJYCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYCommentViewController.xib; sourceTree = "<group>"; };
+		FA999FEB1D33A67000A1B1D0 /* WJYCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYCommentHeaderView.h; sourceTree = "<group>"; };
+		FA999FEC1D33A67000A1B1D0 /* WJYCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYCommentHeaderView.m; sourceTree = "<group>"; };
 		FAA4414E1D2E6B3400B05ABA /* WJYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYUser.h; sourceTree = "<group>"; };
 		FAA4414F1D2E6B3400B05ABA /* WJYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYUser.m; sourceTree = "<group>"; };
 		FAA441511D2E6B5600B05ABA /* WJYComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYComment.h; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				FA19CE031D2E474F00BB3F92 /* WJYTopicVideoViews.h */,
 				FA19CE041D2E474F00BB3F92 /* WJYTopicVideoViews.m */,
 				FA19CE061D2E476500BB3F92 /* WJYTopicVideoViews.xib */,
+				FA999FEB1D33A67000A1B1D0 /* WJYCommentHeaderView.h */,
+				FA999FEC1D33A67000A1B1D0 /* WJYCommentHeaderView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -828,6 +833,7 @@
 				FA4F68E41D2501DA00CCB7D8 /* WJYTopicPictureViews.m in Sources */,
 				FA989CCB1D10268400752CE7 /* UIBarButtonItem+WJYExtension.m in Sources */,
 				FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */,
+				FA999FED1D33A67000A1B1D0 /* WJYCommentHeaderView.m in Sources */,
 				FA2B2FDC1D253A950026C72B /* WJYShowPictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

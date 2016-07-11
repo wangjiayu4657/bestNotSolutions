@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class WJYComment;
+
 @interface WJYTopicsModel : NSObject
+
+/**id*/
+@property (copy , nonatomic) NSString *ID;
 
 /**发帖者的头像*/
 @property (copy , nonatomic)  NSString *profile_image;
@@ -71,7 +76,7 @@
 @property (copy , nonatomic)  NSString *videouri;
 
 /**最热评论*/
-@property (strong , nonatomic)  NSArray *top_cmt;
+@property (strong , nonatomic)  WJYComment *top_cmt;
 
 
 /***************************** 添加额外的副主属性 *******************************/
