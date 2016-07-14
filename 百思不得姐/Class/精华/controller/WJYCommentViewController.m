@@ -21,7 +21,6 @@
 /**最热评论*/
 @property (strong , nonatomic)  NSArray *hotComment;
 
-
 /**最新评论*/
 @property (strong , nonatomic)  NSMutableArray *latestComment;
 
@@ -138,11 +137,7 @@
     WJYComment *comment = [self.latestComment lastObject];
     params[@"lastcid"] = comment.ID;
    
-    NSLog(@"comment.ID = %zd",comment.ID);
-    
-
-    
-     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:params resultBlock:^(id responseObject, NSError *error) {
+    [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:params resultBlock:^(id responseObject, NSError *error) {
         if (!error) {
             
             if (![responseObject isKindOfClass:[NSDictionary class]]) {
@@ -246,16 +241,56 @@
     return cell;
 }
 
+- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    if (menu.isMenuVisible) {//如果 UIMenuController 已经显示,再次点击时则隐藏
+        [menu setMenuVisible:NO animated:YES];
+        return;
+    }
+    //获取 cell
+    WJYCommentCell *cell = (WJYCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+    //让 cell 成为第一响应者
+    [cell becomeFirstResponder];
+    CGRect rect = CGRectMake(0, cell.height * 0.5, cell.width, cell.height * 0.5);
+    UIMenuItem *dingItem = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+    UIMenuItem *replayItem = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(replay:)];
+    UIMenuItem *reportItem = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+    menu.menuItems = @[dingItem,replayItem,reportItem];
+    [menu setTargetRect:rect inView:cell];
+    [menu  setMenuVisible:YES animated:YES];
+}
+
+#pragma mark - UIMenuItem 处理
+//顶
+- (void) ding:(UIMenuController *) menu {
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%@",[self commentInIndexPath:path].content);
+}
+//回复
+- (void) replay:(UIMenuController *) menu {
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%@",[self commentInIndexPath:path].content);
+}
+//举报
+- (void) report:(UIMenuController *) menu {
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%@",[self commentInIndexPath:path].content);
+}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
     if (self.saveTopic_top_cmt) {
          self.topicModel.top_cmt = self.saveTopic_top_cmt;
         [self.topicModel setValue:@0 forKeyPath:@"cellHeight"];
     }
-    
 //    [self.aClient invalidateSessionCancelingTasks:YES];
 }
 

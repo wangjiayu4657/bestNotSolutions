@@ -51,6 +51,8 @@
 		FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */; };
 		FA9006F61D265C060033C937 /* WJYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9006F41D265C060033C937 /* WJYPublishView.m */; };
 		FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9006F51D265C060033C937 /* WJYPublishView.xib */; };
+		FA9140651D378803006FC61D /* UIImage+WJYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9140641D378803006FC61D /* UIImage+WJYExtension.m */; };
+		FA9140681D379046006FC61D /* UIImageView+WJYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9140671D379046006FC61D /* UIImageView+WJYExtension.m */; };
 		FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */; };
 		FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CA51D10268400752CE7 /* WJYMeViewController.m */; };
 		FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CAB1D10268400752CE7 /* WJYNewViewController.m */; };
@@ -174,6 +176,10 @@
 		FA9006F31D265C060033C937 /* WJYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishView.h; sourceTree = "<group>"; };
 		FA9006F41D265C060033C937 /* WJYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishView.m; sourceTree = "<group>"; };
 		FA9006F51D265C060033C937 /* WJYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishView.xib; sourceTree = "<group>"; };
+		FA9140631D378803006FC61D /* UIImage+WJYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WJYExtension.h"; sourceTree = "<group>"; };
+		FA9140641D378803006FC61D /* UIImage+WJYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WJYExtension.m"; sourceTree = "<group>"; };
+		FA9140661D379046006FC61D /* UIImageView+WJYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WJYExtension.h"; sourceTree = "<group>"; };
+		FA9140671D379046006FC61D /* UIImageView+WJYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WJYExtension.m"; sourceTree = "<group>"; };
 		FA989CA01D10268400752CE7 /* WJYFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYFriendTrendsViewController.h; path = ../WJYFriendTrendsViewController.h; sourceTree = "<group>"; };
 		FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYFriendTrendsViewController.m; path = ../WJYFriendTrendsViewController.m; sourceTree = "<group>"; };
 		FA989CA41D10268400752CE7 /* WJYMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYMeViewController.h; sourceTree = "<group>"; };
@@ -574,6 +580,10 @@
 				FA989CBB1D10268400752CE7 /* UIView+WJYExtension.m */,
 				FA16651D1D22280D005F1A6D /* NSDate+WJYExtension.h */,
 				FA16651E1D22280D005F1A6D /* NSDate+WJYExtension.m */,
+				FA9140631D378803006FC61D /* UIImage+WJYExtension.h */,
+				FA9140641D378803006FC61D /* UIImage+WJYExtension.m */,
+				FA9140661D379046006FC61D /* UIImageView+WJYExtension.h */,
+				FA9140671D379046006FC61D /* UIImageView+WJYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -808,6 +818,7 @@
 				FA1EA8D71D1B9295006B6E24 /* WJYVideoViewController.m in Sources */,
 				FA989CC91D10268400752CE7 /* WJYEssenceViewController.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
+				FA9140651D378803006FC61D /* UIImage+WJYExtension.m in Sources */,
 				FA19CE001D2E367600BB3F92 /* WJYTopicVocieView.m in Sources */,
 				FA8A01F31D18F2A20082FECD /* WJYTextField.m in Sources */,
 				FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */,
@@ -833,6 +844,7 @@
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
 				FAA91A371D12A4340003AB17 /* WJYContentCell.m in Sources */,
 				FA1EA8DA1D1B92AF006B6E24 /* WJYAllViewController.m in Sources */,
+				FA9140681D379046006FC61D /* UIImageView+WJYExtension.m in Sources */,
 				FA989CCA1D10268400752CE7 /* AppDelegate.m in Sources */,
 				FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */,
 				FA16651F1D22280D005F1A6D /* NSDate+WJYExtension.m in Sources */,

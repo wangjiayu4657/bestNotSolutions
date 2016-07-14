@@ -23,13 +23,18 @@
 
 @implementation WJYCommentCell
 
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    return NO;
+}
 
 - (void)awakeFromNib {
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgImageView;
-    
- 
 }
 
 -(void)setComment:(WJYComment *)comment {
@@ -38,7 +43,8 @@
     self.contentLabel.text = self.comment.content;
     self.usernameLabel.text = self.comment.user.username;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%zd",self.comment.like_count];
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:self.comment.user.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置头像
+    [self.profileImageView setHeaderImageView:self.comment.user.profile_image];
     self.sexView.image = [self.comment.user.sex isEqualToString:WJYUserSexMale] ? [UIImage imageNamed:@"Profile_manIcon"] : [UIImage imageNamed:@"Profile_womanIcon"];
     
     if (self.comment.voiceuri.length) {

@@ -103,7 +103,9 @@
     //是否需要显示 vip 标志
     self.isVipView.hidden = !topic.is_vip;
     
-    [self.profieldImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置头像   
+    [self.profieldImageView setHeaderImageView:topic.profile_image];
+    
     self.nameLabel.text = topic.name;
     //帖子的创建时间
     self.createTimeLabel.text = topic.create_time;

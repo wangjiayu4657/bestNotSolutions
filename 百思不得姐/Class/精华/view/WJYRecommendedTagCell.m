@@ -29,8 +29,8 @@
 
 - (void)setRecommendedModel:(WJYRecommendedTag *)recommendedModel {
     _recommendedModel = recommendedModel;
-    
-    [self.imageListImageView sd_setImageWithURL:[NSURL URLWithString:recommendedModel.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+     //设置头像
+    [self.imageListImageView setHeaderImageView:recommendedModel.image_list];
     self.themeNameLabel.text = recommendedModel.theme_name;
     NSString *subNumber = nil;
     if (recommendedModel.sub_number < 10000) {

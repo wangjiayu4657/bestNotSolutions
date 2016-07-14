@@ -36,7 +36,8 @@
         count = [NSString stringWithFormat:@"%.1f万人关注",contentModel.fans_count / 10000.0];
     }
     self.fansCountLabel.text = count;
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:contentModel.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置头像
+    [self.headerImageView setHeaderImageView:contentModel.header];
     
 }
 

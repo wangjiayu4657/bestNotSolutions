@@ -24,6 +24,8 @@
 #import "WJYConst.h"
 #import "NSDate+WJYExtension.h"
 #import <POP.h>
+#import "UIImage+WJYExtension.h"
+#import "UIImageView+WJYExtension.h"
 #endif
 
 #ifdef DEBUG 
