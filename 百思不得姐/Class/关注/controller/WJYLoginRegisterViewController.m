@@ -7,6 +7,7 @@
 //
 
 #import "WJYLoginRegisterViewController.h"
+#import "WJYTopWindow.h"
 
 @interface WJYLoginRegisterViewController ()
 
@@ -20,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //将自定义的 window 隐藏则状态栏会变白,否则状态栏的颜色变黑
+    [WJYTopWindow hide];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -49,6 +51,9 @@
     }];
 }
 - (IBAction)back:(id)sender {
+    //当界面消失时恢复状态栏为黑色
+    [WJYTopWindow show];
+    [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -34,6 +34,7 @@ static NSString *headID = @"headerView";
         UILabel *label = [[UILabel alloc] init];
         label.width = 200;
         label.x = topicCellMargin;
+        label.font = [UIFont systemFontOfSize:15];
         label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         label.textColor = RGBColor(67, 67, 67);
         self.label = label;
@@ -46,5 +47,7 @@ static NSString *headID = @"headerView";
     _title = [title copy];
     self.label.text = title;
 }
+
+
 
 @end

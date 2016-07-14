@@ -11,7 +11,7 @@
 #import "WJYTopicsModel.h"
 #import "WJYComment.h"
 #import "WJYCommentHeaderView.h"
-
+#import "WJYCommentCell.h"
 
 @interface WJYCommentViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textfieldBottomConstraint;
@@ -21,11 +21,15 @@
 /**最热评论*/
 @property (strong , nonatomic)  NSArray *hotComment;
 
+
 /**最新评论*/
 @property (strong , nonatomic)  NSMutableArray *latestComment;
 
 /** 先将最热评论的数据保存下来,然后在清空*/
 @property (strong , nonatomic)  WJYComment *saveTopic_top_cmt;
+
+/**页码*/
+@property(assign , nonatomic) NSInteger page;
 
 @end
 
@@ -42,8 +46,16 @@
 - (void) setUpBasic {
     self.title = @"评论";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"comment_nav_item_share_icon" highLightImage:@"comment_nav_item_share_icon_click" target:nil action:nil];
-    
+    //监听键盘弹出时的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, topicCellMargin, 0);
+    self.tableView.backgroundColor = GlobalColor;
+    //自动计算 cell 的高度(一下两点缺一不可,切 ios8以后才行)
+    self.tableView.estimatedRowHeight = 44;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([WJYCommentCell class]) bundle:nil] forCellReuseIdentifier:commentCellID];
 }
 
 - (void) setUpHeader {
@@ -68,13 +80,20 @@
     self.tableView.tableHeaderView = header;
 
 }
-//下拉刷新
+//设置刷新
 - (void) setUpRefresh {
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadMoreNewContent)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewComment)];
     [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComment)];
+    self.tableView.mj_footer.hidden = YES;
 }
 
-- (void) loadMoreNewContent {
+//下拉刷新
+- (void) loadNewComment {
+    //下拉刷新时结束上拉刷新
+    [self.tableView.mj_footer endRefreshing];
+    
     HttpClient *aClient = [HttpClient sharedClient];
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:4];
     params[@"a"] = @"dataList";
@@ -82,16 +101,76 @@
     params[@"data_id"] = self.topicModel.ID;
     params[@"hot"] = @"1";
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:params resultBlock:^(id responseObject, NSError *error) {
-        //最热评论
-        self.hotComment = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
-        
-        //最新评论
-        self.latestComment = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+        if (!error) {
+            self.page = 1;
+            //最热评论
+            self.hotComment = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
+            //最新评论
+            self.latestComment = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [self.tableView.mj_header endRefreshing];
+            });
+            
+            NSInteger total = [responseObject[@"total"] integerValue];
+            if (self.latestComment.count >= total) {
+                self.tableView.mj_footer.hidden = YES;
+            }
+        }else {
             [self.tableView.mj_header endRefreshing];
-            [self.tableView reloadData];
-        });
+        }
+    }];
+}
+
+//上拉刷新
+- (void) loadMoreComment {
+    //上拉刷新时结束下拉刷新
+    [self.tableView.mj_header endRefreshing];
+    
+    NSInteger page = self.page + 1;
+    
+    HttpClient *aClient = [HttpClient sharedClient];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:6];
+    params[@"a"] = @"dataList";
+    params[@"c"] = @"comment";
+    params[@"data_id"] = self.topicModel.ID;
+    params[@"page"] = @(page);
+    WJYComment *comment = [self.latestComment lastObject];
+    params[@"lastcid"] = comment.ID;
+   
+    NSLog(@"comment.ID = %zd",comment.ID);
+    
+
+    
+     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:params resultBlock:^(id responseObject, NSError *error) {
+        if (!error) {
+            
+            if (![responseObject isKindOfClass:[NSDictionary class]]) {
+                [self.tableView.mj_footer endRefreshing];
+                self.tableView.mj_footer.hidden = YES;
+                return ;
+            }
+            //最新评论
+            NSArray *newComments = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            [self.latestComment addObjectsFromArray:newComments];
+            //页码
+            self.page = page;
+            //刷新数据
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+            //如果评论数组的总数大于等于返回的总数则说明没有新数据了,即底部的上拉刷新要隐藏
+            NSInteger total = [responseObject[@"total"] integerValue];
+            NSLog(@"total = %zd",total);
+            if (self.latestComment.count >= total) {
+                self.tableView.mj_footer.hidden = YES;
+            }else {
+                [self.tableView.mj_footer endRefreshing];
+            }
+        }else {
+            [self.tableView.mj_footer endRefreshing];
+            self.page--;
+        }
     }];
 }
 
@@ -139,6 +218,7 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger hotCount = self.hotComment.count;
     NSInteger latestCount = self.latestComment.count;
+    tableView.mj_footer.hidden = (latestCount == 0);//如果没有最新评论则隐藏底部刷新
     if (section == 0) return hotCount ? hotCount : latestCount;
     return latestCount;
 }
@@ -158,15 +238,11 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellID = @"commnet";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    
-    WJYComment *comment = [self commentInIndexPath:indexPath];
-    cell.textLabel.text = comment.content;
-    
+
+    WJYCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:commentCellID];
+   
+    cell.comment = [self commentInIndexPath:indexPath];
+
     return cell;
 }
 
@@ -180,6 +256,29 @@
         [self.topicModel setValue:@0 forKeyPath:@"cellHeight"];
     }
     
+//    [self.aClient invalidateSessionCancelingTasks:YES];
 }
+
+
+
+//    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        //最新评论
+//        NSArray *newComments = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+//        [self.latestComment addObjectsFromArray:newComments];
+//
+//        [self.tableView reloadData];
+//
+//        NSInteger total = [responseObject[@"total"] integerValue];
+//        if (self.latestComment.count >= total) {
+//            self.tableView.mj_footer.hidden = YES;
+//        }else {
+//            [self.tableView.mj_footer endRefreshing];
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        [self.tableView.mj_footer endRefreshing];
+//    }];
+
 
 @end

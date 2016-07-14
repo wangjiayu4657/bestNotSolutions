@@ -17,6 +17,6 @@
 @property (assign , nonatomic) CGFloat height;
 @property (assign , nonatomic) CGFloat centerX;
 @property (assign , nonatomic) CGFloat centerY;
-
+- (BOOL)isShowingOnKeyWindow;
 
 @end

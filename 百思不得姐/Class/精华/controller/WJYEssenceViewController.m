@@ -45,6 +45,7 @@
     [self setUpTitleView];
     //设置底部的 scrollView
     [self setUpContentView];
+    
 }
 
 

@@ -9,8 +9,13 @@
 #import "AppDelegate.h"
 #import "WJYTabBarController.h"
 #import "WJYPushGuideView.h"
+#import "WJYTopWindow.h"
+
+
 
 @interface AppDelegate ()
+
+@property (strong , nonatomic) UIWindow *test;
 
 @end
 
@@ -22,15 +27,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     WJYTabBarController *tabVC = [[WJYTabBarController alloc] init];
     
-    
     self.window.rootViewController = tabVC;
     [self.window makeKeyAndVisible];
-    
+
     //显示引导页
     [WJYPushGuideView show];
-   
-    
-    
+
     return YES;
 }
 
@@ -50,6 +52,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    //UIWindow 这个控件刚创建的时候默认是隐藏的，之所以创建window的这段代码块要延时一段时间来执行，是因为程序在刚启动的时候，会查看你创建的窗口有没有设置根控制器，如果发现你没有设置，苹果就会抛错，让程序崩溃这（在之前只是警告），来告诉你不设置根控制器是不合适的。我们只要错过这段检查的时间，就可以避免程序崩溃了。以上这段代码也就证明了UIWindow控件是能够直接显示在手机屏幕上。
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+          [WJYTopWindow show];
+    });
+  
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

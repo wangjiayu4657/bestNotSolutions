@@ -7,7 +7,12 @@
 //
 
 #import "WJYComment.h"
+//#import <MJExtension.h>
 
 @implementation WJYComment
+
++ (NSDictionary *) replacedKeyFromPropertyName {
+    return @{@"ID" : @"id"};
+}
 
 @end

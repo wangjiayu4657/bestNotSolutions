@@ -10,8 +10,15 @@
 @class WJYUser;
 
 @interface WJYComment : NSObject
+
+/**id*/
+@property (copy , nonatomic)  NSString *ID;
+
 /**音频文件的时长*/
 @property (assign , nonatomic)  NSInteger voicetime;
+
+/**音频文件的地址*/
+@property (copy , nonatomic)  NSString *voiceuri;
 
 /**被点赞的数量*/
 @property (assign , nonatomic) NSInteger like_count;
