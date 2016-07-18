@@ -77,7 +77,6 @@
     [header addSubview:topicCell];
     //设置 headerView
     self.tableView.tableHeaderView = header;
-
 }
 //设置刷新
 - (void) setUpRefresh {
@@ -101,6 +100,11 @@
     params[@"hot"] = @"1";
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:params resultBlock:^(id responseObject, NSError *error) {
         if (!error) {
+            if (![responseObject isKindOfClass:[NSDictionary class]]) {
+                [self.tableView.mj_header endRefreshing];
+                return ;
+            }
+            
             self.page = 1;
             //最热评论
             self.hotComment = [WJYComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];

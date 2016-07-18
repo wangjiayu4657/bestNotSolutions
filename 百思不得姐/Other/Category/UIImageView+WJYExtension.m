@@ -15,6 +15,5 @@
     [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.image = image ? [image circleImage] : placeholder;
     }];
-
 }
 @end

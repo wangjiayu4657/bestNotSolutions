@@ -25,3 +25,5 @@ NSString * const WJYUserSexFemale = @"f";
 
 /** 精华 - cell - 最热评论标题的高度*/
 CGFloat const topicCellCommentTitleHeight = 20;
+
+NSString * const tabbarSelectedNotification = @"tabbarSelectedNotification";

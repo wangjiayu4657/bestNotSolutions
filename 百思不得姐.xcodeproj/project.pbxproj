@@ -46,6 +46,8 @@
 		FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0AE1D0EA30E00D63B2F /* LaunchScreen.storyboard */; };
 		FA60C0BB1D0EA30E00D63B2F /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA60C0BA1D0EA30E00D63B2F /* _____Tests.m */; };
 		FA60C0C61D0EA30E00D63B2F /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA60C0C51D0EA30E00D63B2F /* _____UITests.m */; };
+		FA6A9E2C1D3C8B6C00869077 /* WJYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A9E2A1D3C8B6C00869077 /* WJYWebViewController.m */; };
+		FA6A9E2D1D3C8B6C00869077 /* WJYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6A9E2B1D3C8B6C00869077 /* WJYWebViewController.xib */; };
 		FA8A01F31D18F2A20082FECD /* WJYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F21D18F2A20082FECD /* WJYTextField.m */; };
 		FA8A01F71D19449B0082FECD /* WJYPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F61D19449B0082FECD /* WJYPushGuideView.m */; };
 		FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */; };
@@ -78,6 +80,10 @@
 		FAB3BDB01D349EAA0034CC8F /* WJYCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BDAE1D349EAA0034CC8F /* WJYCommentCell.m */; };
 		FAB3BDB11D349EAA0034CC8F /* WJYCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB3BDAF1D349EAA0034CC8F /* WJYCommentCell.xib */; };
 		FAB3BDB41D34FE8A0034CC8F /* WJYTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BDB31D34FE8A0034CC8F /* WJYTopWindow.m */; };
+		FAC606621D38D37200EF3E6F /* WJYMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC606611D38D37200EF3E6F /* WJYMeCell.m */; };
+		FAC606651D38D4AA00EF3E6F /* WJYSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC606641D38D4AA00EF3E6F /* WJYSquareModel.m */; };
+		FAC606681D38D60800EF3E6F /* WJYTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC606671D38D60800EF3E6F /* WJYTableFooterView.m */; };
+		FAC6066B1D38DFC800EF3E6F /* WJYSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6066A1D38DFC800EF3E6F /* WJYSquareButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +174,9 @@
 		FA60C0C11D0EA30E00D63B2F /* 百思不得姐UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "百思不得姐UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA60C0C51D0EA30E00D63B2F /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		FA60C0C71D0EA30E00D63B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA6A9E291D3C8B6C00869077 /* WJYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYWebViewController.h; sourceTree = "<group>"; };
+		FA6A9E2A1D3C8B6C00869077 /* WJYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYWebViewController.m; sourceTree = "<group>"; };
+		FA6A9E2B1D3C8B6C00869077 /* WJYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYWebViewController.xib; sourceTree = "<group>"; };
 		FA8A01F11D18F2A20082FECD /* WJYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTextField.h; sourceTree = "<group>"; };
 		FA8A01F21D18F2A20082FECD /* WJYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTextField.m; sourceTree = "<group>"; };
 		FA8A01F51D19449B0082FECD /* WJYPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPushGuideView.h; sourceTree = "<group>"; };
@@ -224,6 +233,14 @@
 		FAB3BDAF1D349EAA0034CC8F /* WJYCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYCommentCell.xib; sourceTree = "<group>"; };
 		FAB3BDB21D34FE8A0034CC8F /* WJYTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopWindow.h; sourceTree = "<group>"; };
 		FAB3BDB31D34FE8A0034CC8F /* WJYTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopWindow.m; sourceTree = "<group>"; };
+		FAC606601D38D37200EF3E6F /* WJYMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYMeCell.h; path = "百思不得姐/Other/Category/WJYMeCell.h"; sourceTree = SOURCE_ROOT; };
+		FAC606611D38D37200EF3E6F /* WJYMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYMeCell.m; path = "百思不得姐/Other/Category/WJYMeCell.m"; sourceTree = SOURCE_ROOT; };
+		FAC606631D38D4AA00EF3E6F /* WJYSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYSquareModel.h; path = "百思不得姐/Other/Category/WJYSquareModel.h"; sourceTree = SOURCE_ROOT; };
+		FAC606641D38D4AA00EF3E6F /* WJYSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYSquareModel.m; path = "百思不得姐/Other/Category/WJYSquareModel.m"; sourceTree = SOURCE_ROOT; };
+		FAC606661D38D60800EF3E6F /* WJYTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYTableFooterView.h; path = "百思不得姐/Other/Category/WJYTableFooterView.h"; sourceTree = SOURCE_ROOT; };
+		FAC606671D38D60800EF3E6F /* WJYTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYTableFooterView.m; path = "百思不得姐/Other/Category/WJYTableFooterView.m"; sourceTree = SOURCE_ROOT; };
+		FAC606691D38DFC800EF3E6F /* WJYSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYSquareButton.h; path = "百思不得姐/Other/Category/WJYSquareButton.h"; sourceTree = SOURCE_ROOT; };
+		FAC6066A1D38DFC800EF3E6F /* WJYSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYSquareButton.m; path = "百思不得姐/Other/Category/WJYSquareButton.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +439,9 @@
 			children = (
 				FA989CA41D10268400752CE7 /* WJYMeViewController.h */,
 				FA989CA51D10268400752CE7 /* WJYMeViewController.m */,
+				FA6A9E291D3C8B6C00869077 /* WJYWebViewController.h */,
+				FA6A9E2A1D3C8B6C00869077 /* WJYWebViewController.m */,
+				FA6A9E2B1D3C8B6C00869077 /* WJYWebViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -429,6 +449,8 @@
 		FA989CA61D10268400752CE7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FAC606631D38D4AA00EF3E6F /* WJYSquareModel.h */,
+				FAC606641D38D4AA00EF3E6F /* WJYSquareModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -436,6 +458,12 @@
 		FA989CA71D10268400752CE7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FAC606601D38D37200EF3E6F /* WJYMeCell.h */,
+				FAC606611D38D37200EF3E6F /* WJYMeCell.m */,
+				FAC606661D38D60800EF3E6F /* WJYTableFooterView.h */,
+				FAC606671D38D60800EF3E6F /* WJYTableFooterView.m */,
+				FAC606691D38DFC800EF3E6F /* WJYSquareButton.h */,
+				FAC6066A1D38DFC800EF3E6F /* WJYSquareButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -735,6 +763,7 @@
 				FA989CCE1D10268400752CE7 /* Images.xcassets in Resources */,
 				FA1AB8421D181026008F7AC2 /* WJYLoginRegisterViewController.xib in Resources */,
 				FA19CE071D2E476500BB3F92 /* WJYTopicVideoViews.xib in Resources */,
+				FA6A9E2D1D3C8B6C00869077 /* WJYWebViewController.xib in Resources */,
 				FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */,
 				FA2B2FDD1D253A950026C72B /* WJYShowPictureViewController.xib in Resources */,
 				FA19CE021D2E368100BB3F92 /* WJYTopicVocieView.xib in Resources */,
@@ -817,6 +846,7 @@
 				FA989CCC1D10268400752CE7 /* UIView+WJYExtension.m in Sources */,
 				FA1EA8D71D1B9295006B6E24 /* WJYVideoViewController.m in Sources */,
 				FA989CC91D10268400752CE7 /* WJYEssenceViewController.m in Sources */,
+				FAC6066B1D38DFC800EF3E6F /* WJYSquareButton.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
 				FA9140651D378803006FC61D /* UIImage+WJYExtension.m in Sources */,
 				FA19CE001D2E367600BB3F92 /* WJYTopicVocieView.m in Sources */,
@@ -825,6 +855,7 @@
 				FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */,
 				FA1AB83D1D17BFB1008F7AC2 /* Foundation+Log.m in Sources */,
 				FA05D4431D1D127800712025 /* WJYTopicsModel.m in Sources */,
+				FAC606651D38D4AA00EF3E6F /* WJYSquareModel.m in Sources */,
 				FA1AB8451D1818E7008F7AC2 /* WJYVerticalButton.m in Sources */,
 				FA1AB83A1D17BD76008F7AC2 /* WJYRecommendedTagCell.m in Sources */,
 				FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */,
@@ -838,8 +869,10 @@
 				FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */,
 				FA05D44A1D1D465A00712025 /* WJYTopicsCell.m in Sources */,
 				FA1665231D227CD5005F1A6D /* WJYTopicViewController.m in Sources */,
+				FA6A9E2C1D3C8B6C00869077 /* WJYWebViewController.m in Sources */,
 				FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */,
 				FAA441531D2E6B5600B05ABA /* WJYComment.m in Sources */,
+				FAC606681D38D60800EF3E6F /* WJYTableFooterView.m in Sources */,
 				FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
 				FAA91A371D12A4340003AB17 /* WJYContentCell.m in Sources */,
@@ -860,6 +893,7 @@
 				FAA441501D2E6B3400B05ABA /* WJYUser.m in Sources */,
 				FA4F68E41D2501DA00CCB7D8 /* WJYTopicPictureViews.m in Sources */,
 				FA989CCB1D10268400752CE7 /* UIBarButtonItem+WJYExtension.m in Sources */,
+				FAC606621D38D37200EF3E6F /* WJYMeCell.m in Sources */,
 				FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */,
 				FA999FED1D33A67000A1B1D0 /* WJYCommentHeaderView.m in Sources */,
 				FA2B2FDC1D253A950026C72B /* WJYShowPictureViewController.m in Sources */,

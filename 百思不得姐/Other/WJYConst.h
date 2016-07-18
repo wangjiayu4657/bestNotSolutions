@@ -39,3 +39,5 @@ UIKIT_EXTERN  NSString * const WJYUserSexFemale;
 /** 精华 - cell - 最热评论标题的高度*/
 UIKIT_EXTERN CGFloat const topicCellCommentTitleHeight;
 
+/** tabBarViewControll 的 tabbar 被点击时的通知*/
+UIKIT_EXTERN NSString * const tabbarSelectedNotification;

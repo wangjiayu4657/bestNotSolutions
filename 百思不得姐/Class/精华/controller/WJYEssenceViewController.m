@@ -125,9 +125,6 @@
 //设置子控制器
 - (void) setUpChildController {
     
-    WJYWordViewController *wordVC = [[WJYWordViewController alloc] init];
-    wordVC.title = @"段子";
-    [self addChildViewController:wordVC];
     
     WJYAllViewController *allVC = [[WJYAllViewController alloc] init];
     allVC.title = @"全部";
@@ -144,6 +141,11 @@
     WJYPictureViewController *pictureVC = [[WJYPictureViewController alloc] init];
     pictureVC.title = @"图片";
     [self addChildViewController:pictureVC];
+    
+    WJYWordViewController *wordVC = [[WJYWordViewController alloc] init];
+    wordVC.title = @"段子";
+    [self addChildViewController:wordVC];
+
     
    
 }

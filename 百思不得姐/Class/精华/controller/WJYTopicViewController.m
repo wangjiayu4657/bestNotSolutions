@@ -11,6 +11,7 @@
 #import "WJYTopicsModel.h"
 #import "WJYTopicsCell.h"
 #import "WJYCommentViewController.h"
+#import "WJYNewViewController.h"
 
 
 @interface WJYTopicViewController ()
@@ -23,6 +24,9 @@
 @property (copy , nonatomic) NSString *maxtime;
 /**保存上一次的请求参数,目的是为了只处理最后一次请求回来的数据*/
 @property (strong , nonatomic)  NSDictionary *params;
+
+/**记录上次所选的 tabbar 的索引*/
+@property (assign , nonatomic)  NSInteger selectedIndex;
 
 @end
 
@@ -62,17 +66,32 @@
     [self.tableView.mj_header beginRefreshing];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+    
+    //监听 tabbar 上的精华是否被点击
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarSelected) name:tabbarSelectedNotification object:nil];
 }
 
-/**
- *  下拉加载新帖子
- */
+//tabbar 上的精华按钮如果被连续点击两次的话则进行刷新
+- (void) tabBarSelected {
+    if (self.selectedIndex == self.tabBarController.selectedIndex && self.view.isShowingOnKeyWindow) {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    //记录上一次点击的 tabbar 的索引
+    self.selectedIndex = self.tabBarController.selectedIndex;
+}
+
+
+-(NSString *) parameterA {
+   return [self.parentViewController isKindOfClass:[WJYNewViewController class]] ? @"newlist" : @"list";
+}
+
+//下拉加载新帖子
 - (void) loadNewTopics {
     
     [self.tableView.mj_footer endRefreshing];
     
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:5];
-    param[@"a"] = @"list";
+    param[@"a"] = [self parameterA];
     param[@"c"] = @"data";
     param[@"type"] = @(self.type);
     self.params = param;
@@ -94,15 +113,13 @@
     }];
 }
 
-/**
- *  上拉加载更多帖子
- */
+//上拉加载更多帖子
 - (void) loadMoreTopics {
     self.page++;
     [self.tableView.mj_header endRefreshing];
     
     NSMutableDictionary *param = [NSMutableDictionary dictionaryWithCapacity:5];
-    param[@"a"] = @"list";
+    param[@"a"] = [self parameterA];
     param[@"c"] = @"data";
     param[@"type"] = @(self.type);
     param[@"page"] = @(self.page);
@@ -128,8 +145,6 @@
     }];
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -148,7 +163,6 @@
     WJYTopicsModel *model = self.dataSource[indexPath.row];
     return model.cellHeight;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WJYCommentViewController *commentVC = [[WJYCommentViewController alloc] init];

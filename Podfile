@@ -7,4 +7,5 @@ pod "SVProgressHUD"
 pod "MJExtension"
 pod "MJRefresh"
 pod "DACircularProgress"
-pod "POP"
+pod 'pop', '~> 1.0.9'
+pod "NJKWebViewProgress"

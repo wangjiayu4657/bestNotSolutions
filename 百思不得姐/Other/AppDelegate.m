@@ -13,7 +13,7 @@
 
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @property (strong , nonatomic) UIWindow *test;
 
@@ -26,7 +26,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     WJYTabBarController *tabVC = [[WJYTabBarController alloc] init];
-    
+    tabVC.delegate = self;
     self.window.rootViewController = tabVC;
     [self.window makeKeyAndVisible];
 
@@ -34,6 +34,10 @@
     [WJYPushGuideView show];
 
     return YES;
+}
+
+- (void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    [[NSNotificationCenter defaultCenter] postNotificationName:tabbarSelectedNotification object:nil userInfo:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
