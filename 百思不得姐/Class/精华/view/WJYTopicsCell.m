@@ -56,13 +56,10 @@
 @implementation WJYTopicsCell
 
 
-+(instancetype)cell {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
-}
 
 -(WJYTopicPictureViews *)pictureView{
     if (!_pictureView) {
-        WJYTopicPictureViews *pictureView = [WJYTopicPictureViews pictureView];
+        WJYTopicPictureViews *pictureView = [WJYTopicPictureViews viewFromXib];
         [self.contentView addSubview:pictureView];
         _pictureView = pictureView;
     }
@@ -71,7 +68,7 @@
 
 -(WJYTopicVocieView *)voiceView{
     if (!_voiceView) {
-        WJYTopicVocieView *voiceView = [WJYTopicVocieView voiceView];
+        WJYTopicVocieView *voiceView = [WJYTopicVocieView viewFromXib];
         [self.contentView addSubview:voiceView];
         _voiceView = voiceView;
     }
@@ -80,7 +77,7 @@
 
 -(WJYTopicVideoViews *)videoView{
     if (!_videoView) {
-        WJYTopicVideoViews *videoView = [WJYTopicVideoViews videoView];
+        WJYTopicVideoViews *videoView = [WJYTopicVideoViews viewFromXib];
         [self.contentView addSubview:videoView];
         _videoView = videoView;
     }

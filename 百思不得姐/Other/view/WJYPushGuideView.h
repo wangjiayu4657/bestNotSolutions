@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WJYPushGuideView : UIView
-+ (instancetype) guideView;
 
 + (void) show;
 @end

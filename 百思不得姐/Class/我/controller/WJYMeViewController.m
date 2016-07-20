@@ -13,7 +13,6 @@
 
 @interface WJYMeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-/**<#strong#>*/
 @property (strong , nonatomic) UITableView  *tableView;
 
 @end
@@ -28,7 +27,7 @@
 }
 
 - (void) setUpNav {
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    self.navigationItem.title = @"我";
     UIBarButtonItem *settingButton = [UIBarButtonItem itemWithImage:@"mine-setting-icon" highLightImage:@"mine-setting-icon-click" target:self action:@selector(settingClick)];
     UIBarButtonItem *moonButton = [UIBarButtonItem itemWithImage:@"mine-moon-icon" highLightImage:@"mine-moon-icon-click" target:self action:@selector(moonClick)];
     self.navigationItem.rightBarButtonItems = @[settingButton,moonButton];

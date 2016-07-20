@@ -44,6 +44,8 @@
 		FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA91A361D12A4340003AB17 /* WJYContentCell.xib */; };
 		FAB01E7C1D102A3400710854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB01E7A1D102A0900710854 /* main.m */; };
 		FAB01E801D102BDF00710854 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA989CD21D10277300752CE7 /* Info.plist */; };
+		FAD9AC911D3CC4F600AEC6EC /* WJYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9AC8E1D3CC4F600AEC6EC /* WJYPublishView.m */; };
+		FAD9AC921D3CC4F600AEC6EC /* WJYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD9AC8F1D3CC4F600AEC6EC /* WJYPublishView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,9 @@
 		FAA91A351D12A4340003AB17 /* WJYContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYContentCell.m; sourceTree = "<group>"; };
 		FAA91A361D12A4340003AB17 /* WJYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYContentCell.xib; sourceTree = "<group>"; };
 		FAB01E7B1D102A0900710854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Base; path = Base.lproj/main.m; sourceTree = "<group>"; };
+		FAD9AC8D1D3CC4F600AEC6EC /* WJYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishView.h; sourceTree = "<group>"; };
+		FAD9AC8E1D3CC4F600AEC6EC /* WJYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishView.m; sourceTree = "<group>"; };
+		FAD9AC8F1D3CC4F600AEC6EC /* WJYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +256,7 @@
 		FA989C9B1D10268400752CE7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FAD9AC8B1D3CC4F600AEC6EC /* 发布 */,
 				FA1F373D1D1159AD007EE546 /* HttpClient */,
 				FA989CAE1D10268400752CE7 /* 精华 */,
 				FA989CA81D10268400752CE7 /* 新帖 */,
@@ -464,6 +470,32 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		FAD9AC8B1D3CC4F600AEC6EC /* 发布 */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9AC8C1D3CC4F600AEC6EC /* controller */,
+				FAD9AC901D3CC4F600AEC6EC /* view */,
+			);
+			path = "发布";
+			sourceTree = "<group>";
+		};
+		FAD9AC8C1D3CC4F600AEC6EC /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9AC8D1D3CC4F600AEC6EC /* WJYPublishView.h */,
+				FAD9AC8E1D3CC4F600AEC6EC /* WJYPublishView.m */,
+				FAD9AC8F1D3CC4F600AEC6EC /* WJYPublishView.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FAD9AC901D3CC4F600AEC6EC /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -571,6 +603,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD9AC921D3CC4F600AEC6EC /* WJYPublishView.xib in Resources */,
 				FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */,
 				FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */,
 				FA1F37371D114DB8007EE546 /* WJYFriendTrendsViewController.xib in Resources */,
@@ -673,6 +706,7 @@
 				FA989CCA1D10268400752CE7 /* AppDelegate.m in Sources */,
 				FA989CD11D10268400752CE7 /* WJYTabBar.m in Sources */,
 				FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */,
+				FAD9AC911D3CC4F600AEC6EC /* WJYPublishView.m in Sources */,
 				FAB01E7C1D102A3400710854 /* main.m in Sources */,
 				FA1F37401D1159AD007EE546 /* HttpClient.m in Sources */,
 				FA989CCB1D10268400752CE7 /* UIBarButtonItem+WJYExtension.m in Sources */,

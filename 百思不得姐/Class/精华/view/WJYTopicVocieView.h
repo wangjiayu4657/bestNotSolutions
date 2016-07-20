@@ -12,10 +12,8 @@
 
 @interface WJYTopicVocieView : UIView
 
-
 /** 数据模型*/
 @property (strong , nonatomic)  WJYTopicsModel *topicModel;
 
-+ (instancetype) voiceView;
 
 @end

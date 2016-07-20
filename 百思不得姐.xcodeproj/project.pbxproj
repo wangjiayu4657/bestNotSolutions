@@ -40,6 +40,11 @@
 		FA1F37461D117967007EE546 /* WJYMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F37451D117967007EE546 /* WJYMenuModel.m */; };
 		FA2B2FDC1D253A950026C72B /* WJYShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2FDA1D253A950026C72B /* WJYShowPictureViewController.m */; };
 		FA2B2FDD1D253A950026C72B /* WJYShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2B2FDB1D253A950026C72B /* WJYShowPictureViewController.xib */; };
+		FA2BE2061D3F53CB003C1AAA /* WJYTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2BE2051D3F53CB003C1AAA /* WJYTagButton.m */; };
+		FA2BE2091D3F6743003C1AAA /* WJYTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2BE2081D3F6743003C1AAA /* WJYTagTextField.m */; };
+		FA3C84181D3E24FA00D4497F /* WJYAddTagToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3C84171D3E24FA00D4497F /* WJYAddTagToolbar.m */; };
+		FA3C841A1D3E250500D4497F /* WJYAddTagToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3C84191D3E250500D4497F /* WJYAddTagToolbar.xib */; };
+		FA3C841D1D3E3C0000D4497F /* WJYAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3C841C1D3E3C0000D4497F /* WJYAddTagViewController.m */; };
 		FA4F68E41D2501DA00CCB7D8 /* WJYTopicPictureViews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F68E31D2501DA00CCB7D8 /* WJYTopicPictureViews.m */; };
 		FA4F68E61D2501E600CCB7D8 /* WJYTopicPictureViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F68E51D2501E600CCB7D8 /* WJYTopicPictureViews.xib */; };
 		FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0A91D0EA30E00D63B2F /* Main.storyboard */; };
@@ -51,8 +56,6 @@
 		FA8A01F31D18F2A20082FECD /* WJYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F21D18F2A20082FECD /* WJYTextField.m */; };
 		FA8A01F71D19449B0082FECD /* WJYPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8A01F61D19449B0082FECD /* WJYPushGuideView.m */; };
 		FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */; };
-		FA9006F61D265C060033C937 /* WJYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9006F41D265C060033C937 /* WJYPublishView.m */; };
-		FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9006F51D265C060033C937 /* WJYPublishView.xib */; };
 		FA9140651D378803006FC61D /* UIImage+WJYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9140641D378803006FC61D /* UIImage+WJYExtension.m */; };
 		FA9140681D379046006FC61D /* UIImageView+WJYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9140671D379046006FC61D /* UIImageView+WJYExtension.m */; };
 		FA989CC61D10268400752CE7 /* WJYFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA989CA11D10268400752CE7 /* WJYFriendTrendsViewController.m */; };
@@ -84,6 +87,10 @@
 		FAC606651D38D4AA00EF3E6F /* WJYSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC606641D38D4AA00EF3E6F /* WJYSquareModel.m */; };
 		FAC606681D38D60800EF3E6F /* WJYTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC606671D38D60800EF3E6F /* WJYTableFooterView.m */; };
 		FAC6066B1D38DFC800EF3E6F /* WJYSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC6066A1D38DFC800EF3E6F /* WJYSquareButton.m */; };
+		FAD9AC991D3CC58500AEC6EC /* WJYPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9AC961D3CC58500AEC6EC /* WJYPublishView.m */; };
+		FAD9AC9A1D3CC58500AEC6EC /* WJYPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD9AC971D3CC58500AEC6EC /* WJYPublishView.xib */; };
+		FAD9AC9D1D3CC5D500AEC6EC /* WJYPostWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9AC9C1D3CC5D500AEC6EC /* WJYPostWordViewController.m */; };
+		FAD9ACA01D3CE35B00AEC6EC /* WJYPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9AC9F1D3CE35B00AEC6EC /* WJYPlaceholderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +169,15 @@
 		FA2B2FD91D253A950026C72B /* WJYShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYShowPictureViewController.h; sourceTree = "<group>"; };
 		FA2B2FDA1D253A950026C72B /* WJYShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYShowPictureViewController.m; sourceTree = "<group>"; };
 		FA2B2FDB1D253A950026C72B /* WJYShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYShowPictureViewController.xib; sourceTree = "<group>"; };
+		FA2BE2041D3F53CB003C1AAA /* WJYTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTagButton.h; sourceTree = "<group>"; };
+		FA2BE2051D3F53CB003C1AAA /* WJYTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTagButton.m; sourceTree = "<group>"; };
+		FA2BE2071D3F6743003C1AAA /* WJYTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTagTextField.h; sourceTree = "<group>"; };
+		FA2BE2081D3F6743003C1AAA /* WJYTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTagTextField.m; sourceTree = "<group>"; };
+		FA3C84161D3E24FA00D4497F /* WJYAddTagToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYAddTagToolbar.h; sourceTree = "<group>"; };
+		FA3C84171D3E24FA00D4497F /* WJYAddTagToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYAddTagToolbar.m; sourceTree = "<group>"; };
+		FA3C84191D3E250500D4497F /* WJYAddTagToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYAddTagToolbar.xib; sourceTree = "<group>"; };
+		FA3C841B1D3E3C0000D4497F /* WJYAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYAddTagViewController.h; sourceTree = "<group>"; };
+		FA3C841C1D3E3C0000D4497F /* WJYAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYAddTagViewController.m; sourceTree = "<group>"; };
 		FA4F68E21D2501DA00CCB7D8 /* WJYTopicPictureViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopicPictureViews.h; sourceTree = "<group>"; };
 		FA4F68E31D2501DA00CCB7D8 /* WJYTopicPictureViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopicPictureViews.m; sourceTree = "<group>"; };
 		FA4F68E51D2501E600CCB7D8 /* WJYTopicPictureViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYTopicPictureViews.xib; sourceTree = "<group>"; };
@@ -182,9 +198,6 @@
 		FA8A01F51D19449B0082FECD /* WJYPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPushGuideView.h; sourceTree = "<group>"; };
 		FA8A01F61D19449B0082FECD /* WJYPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPushGuideView.m; sourceTree = "<group>"; };
 		FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPushGuideView.xib; sourceTree = "<group>"; };
-		FA9006F31D265C060033C937 /* WJYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishView.h; sourceTree = "<group>"; };
-		FA9006F41D265C060033C937 /* WJYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishView.m; sourceTree = "<group>"; };
-		FA9006F51D265C060033C937 /* WJYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishView.xib; sourceTree = "<group>"; };
 		FA9140631D378803006FC61D /* UIImage+WJYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WJYExtension.h"; sourceTree = "<group>"; };
 		FA9140641D378803006FC61D /* UIImage+WJYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WJYExtension.m"; sourceTree = "<group>"; };
 		FA9140661D379046006FC61D /* UIImageView+WJYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WJYExtension.h"; sourceTree = "<group>"; };
@@ -241,6 +254,13 @@
 		FAC606671D38D60800EF3E6F /* WJYTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYTableFooterView.m; path = "百思不得姐/Other/Category/WJYTableFooterView.m"; sourceTree = SOURCE_ROOT; };
 		FAC606691D38DFC800EF3E6F /* WJYSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYSquareButton.h; path = "百思不得姐/Other/Category/WJYSquareButton.h"; sourceTree = SOURCE_ROOT; };
 		FAC6066A1D38DFC800EF3E6F /* WJYSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYSquareButton.m; path = "百思不得姐/Other/Category/WJYSquareButton.m"; sourceTree = SOURCE_ROOT; };
+		FAD9AC951D3CC58500AEC6EC /* WJYPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPublishView.h; sourceTree = "<group>"; };
+		FAD9AC961D3CC58500AEC6EC /* WJYPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPublishView.m; sourceTree = "<group>"; };
+		FAD9AC971D3CC58500AEC6EC /* WJYPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYPublishView.xib; sourceTree = "<group>"; };
+		FAD9AC9B1D3CC5D500AEC6EC /* WJYPostWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPostWordViewController.h; sourceTree = "<group>"; };
+		FAD9AC9C1D3CC5D500AEC6EC /* WJYPostWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPostWordViewController.m; sourceTree = "<group>"; };
+		FAD9AC9E1D3CE35B00AEC6EC /* WJYPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYPlaceholderTextView.h; sourceTree = "<group>"; };
+		FAD9AC9F1D3CE35B00AEC6EC /* WJYPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYPlaceholderTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +381,7 @@
 		FA989C9B1D10268400752CE7 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FAD9AC931D3CC58500AEC6EC /* 发布 */,
 				FA1F373D1D1159AD007EE546 /* HttpClient */,
 				FA989CAE1D10268400752CE7 /* 精华 */,
 				FA989CA81D10268400752CE7 /* 新帖 */,
@@ -623,9 +644,6 @@
 				FA989CBE1D10268400752CE7 /* WJYTabBarController.m */,
 				FA1F37331D113B1A007EE546 /* WJYNavigationController.h */,
 				FA1F37341D113B1A007EE546 /* WJYNavigationController.m */,
-				FA9006F31D265C060033C937 /* WJYPublishView.h */,
-				FA9006F41D265C060033C937 /* WJYPublishView.m */,
-				FA9006F51D265C060033C937 /* WJYPublishView.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -640,6 +658,45 @@
 				FA8A01F81D1944A70082FECD /* WJYPushGuideView.xib */,
 				FAB3BDB21D34FE8A0034CC8F /* WJYTopWindow.h */,
 				FAB3BDB31D34FE8A0034CC8F /* WJYTopWindow.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		FAD9AC931D3CC58500AEC6EC /* 发布 */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9AC941D3CC58500AEC6EC /* controller */,
+				FAD9AC981D3CC58500AEC6EC /* view */,
+			);
+			path = "发布";
+			sourceTree = "<group>";
+		};
+		FAD9AC941D3CC58500AEC6EC /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9AC951D3CC58500AEC6EC /* WJYPublishView.h */,
+				FAD9AC961D3CC58500AEC6EC /* WJYPublishView.m */,
+				FAD9AC971D3CC58500AEC6EC /* WJYPublishView.xib */,
+				FAD9AC9B1D3CC5D500AEC6EC /* WJYPostWordViewController.h */,
+				FAD9AC9C1D3CC5D500AEC6EC /* WJYPostWordViewController.m */,
+				FA3C841B1D3E3C0000D4497F /* WJYAddTagViewController.h */,
+				FA3C841C1D3E3C0000D4497F /* WJYAddTagViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FAD9AC981D3CC58500AEC6EC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FAD9AC9E1D3CE35B00AEC6EC /* WJYPlaceholderTextView.h */,
+				FAD9AC9F1D3CE35B00AEC6EC /* WJYPlaceholderTextView.m */,
+				FA3C84161D3E24FA00D4497F /* WJYAddTagToolbar.h */,
+				FA3C84171D3E24FA00D4497F /* WJYAddTagToolbar.m */,
+				FA3C84191D3E250500D4497F /* WJYAddTagToolbar.xib */,
+				FA2BE2041D3F53CB003C1AAA /* WJYTagButton.h */,
+				FA2BE2051D3F53CB003C1AAA /* WJYTagButton.m */,
+				FA2BE2071D3F6743003C1AAA /* WJYTagTextField.h */,
+				FA2BE2081D3F6743003C1AAA /* WJYTagTextField.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -754,6 +811,7 @@
 				FAA91A381D12A4340003AB17 /* WJYContentCell.xib in Resources */,
 				FA1F373C1D115761007EE546 /* WJYRecommendedViewController.xib in Resources */,
 				FA05D44B1D1D465A00712025 /* WJYTopicsCell.xib in Resources */,
+				FAD9AC9A1D3CC58500AEC6EC /* WJYPublishView.xib in Resources */,
 				FA4F68E61D2501E600CCB7D8 /* WJYTopicPictureViews.xib in Resources */,
 				FA8A01F91D1944A70082FECD /* WJYPushGuideView.xib in Resources */,
 				FA999FEA1D336CF900A1B1D0 /* WJYCommentViewController.xib in Resources */,
@@ -764,12 +822,12 @@
 				FA1AB8421D181026008F7AC2 /* WJYLoginRegisterViewController.xib in Resources */,
 				FA19CE071D2E476500BB3F92 /* WJYTopicVideoViews.xib in Resources */,
 				FA6A9E2D1D3C8B6C00869077 /* WJYWebViewController.xib in Resources */,
-				FA9006F71D265C060033C937 /* WJYPublishView.xib in Resources */,
 				FA2B2FDD1D253A950026C72B /* WJYShowPictureViewController.xib in Resources */,
 				FA19CE021D2E368100BB3F92 /* WJYTopicVocieView.xib in Resources */,
 				FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */,
 				FAB3BDB11D349EAA0034CC8F /* WJYCommentCell.xib in Resources */,
 				FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */,
+				FA3C841A1D3E250500D4497F /* WJYAddTagToolbar.xib in Resources */,
 				FA1AB83B1D17BD76008F7AC2 /* WJYRecommendedTagCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,6 +907,7 @@
 				FAC6066B1D38DFC800EF3E6F /* WJYSquareButton.m in Sources */,
 				FA989CCD1D10268400752CE7 /* WJYTabBarController.m in Sources */,
 				FA9140651D378803006FC61D /* UIImage+WJYExtension.m in Sources */,
+				FA3C841D1D3E3C0000D4497F /* WJYAddTagViewController.m in Sources */,
 				FA19CE001D2E367600BB3F92 /* WJYTopicVocieView.m in Sources */,
 				FA8A01F31D18F2A20082FECD /* WJYTextField.m in Sources */,
 				FA1AB8331D17BD33008F7AC2 /* WJYRecommendedTagViewController.m in Sources */,
@@ -864,16 +923,18 @@
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
 				FA1EA8E31D1B92E8006B6E24 /* WJYWordViewController.m in Sources */,
 				FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */,
-				FA9006F61D265C060033C937 /* WJYPublishView.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,
 				FA1AB8411D181026008F7AC2 /* WJYLoginRegisterViewController.m in Sources */,
 				FA05D44A1D1D465A00712025 /* WJYTopicsCell.m in Sources */,
+				FAD9ACA01D3CE35B00AEC6EC /* WJYPlaceholderTextView.m in Sources */,
 				FA1665231D227CD5005F1A6D /* WJYTopicViewController.m in Sources */,
 				FA6A9E2C1D3C8B6C00869077 /* WJYWebViewController.m in Sources */,
 				FAA919EF1D1254E30003AB17 /* WJYMenuCell.m in Sources */,
 				FAA441531D2E6B5600B05ABA /* WJYComment.m in Sources */,
+				FA2BE2061D3F53CB003C1AAA /* WJYTagButton.m in Sources */,
 				FAC606681D38D60800EF3E6F /* WJYTableFooterView.m in Sources */,
 				FAA91A331D12A4090003AB17 /* WJYContentModel.m in Sources */,
+				FAD9AC9D1D3CC5D500AEC6EC /* WJYPostWordViewController.m in Sources */,
 				FA989CC71D10268400752CE7 /* WJYMeViewController.m in Sources */,
 				FAA91A371D12A4340003AB17 /* WJYContentCell.m in Sources */,
 				FA1EA8DA1D1B92AF006B6E24 /* WJYAllViewController.m in Sources */,
@@ -886,15 +947,18 @@
 				FA1F373B1D115761007EE546 /* WJYRecommendedViewController.m in Sources */,
 				FA1EA8DD1D1B92C5006B6E24 /* WJYVoiceViewController.m in Sources */,
 				FAB01E7C1D102A3400710854 /* main.m in Sources */,
+				FA3C84181D3E24FA00D4497F /* WJYAddTagToolbar.m in Sources */,
 				FA19CE051D2E474F00BB3F92 /* WJYTopicVideoViews.m in Sources */,
 				FA8A01F71D19449B0082FECD /* WJYPushGuideView.m in Sources */,
 				FAB3BDB01D349EAA0034CC8F /* WJYCommentCell.m in Sources */,
 				FA1F37401D1159AD007EE546 /* HttpClient.m in Sources */,
+				FA2BE2091D3F6743003C1AAA /* WJYTagTextField.m in Sources */,
 				FAA441501D2E6B3400B05ABA /* WJYUser.m in Sources */,
 				FA4F68E41D2501DA00CCB7D8 /* WJYTopicPictureViews.m in Sources */,
 				FA989CCB1D10268400752CE7 /* UIBarButtonItem+WJYExtension.m in Sources */,
 				FAC606621D38D37200EF3E6F /* WJYMeCell.m in Sources */,
 				FA1F37431D115A02007EE546 /* NSObject+Additions.m in Sources */,
+				FAD9AC991D3CC58500AEC6EC /* WJYPublishView.m in Sources */,
 				FA999FED1D33A67000A1B1D0 /* WJYCommentHeaderView.m in Sources */,
 				FA2B2FDC1D253A950026C72B /* WJYShowPictureViewController.m in Sources */,
 			);

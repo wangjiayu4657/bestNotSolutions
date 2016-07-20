@@ -10,10 +10,6 @@
 
 @implementation WJYPushGuideView
 
-+ (instancetype)guideView {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
-}
-
 +(void)show {
     NSString *key = @"CFBundleShortVersionString";
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
@@ -21,7 +17,7 @@
     if (![currentVersion isEqualToString:sanboxVersion]) {
         
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        WJYPushGuideView *guideView = [WJYPushGuideView guideView];
+        WJYPushGuideView *guideView = [WJYPushGuideView viewFromXib];
         guideView.frame = window.bounds;
         [window addSubview:guideView];
         

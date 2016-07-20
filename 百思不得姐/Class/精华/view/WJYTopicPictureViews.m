@@ -24,9 +24,6 @@
 @implementation WJYTopicPictureViews
 
 
-+ (instancetype)pictureView {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
-}
 
 - (void)awakeFromNib {
     self.autoresizingMask = UIViewAutoresizingNone;

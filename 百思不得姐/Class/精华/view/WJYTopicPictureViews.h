@@ -16,6 +16,5 @@
 @property (strong , nonatomic)  WJYTopicsModel *topicModel;
 
 
-+ (instancetype) pictureView;
 
 @end

@@ -14,6 +14,5 @@
 /** 数据模型*/
 @property (strong , nonatomic)  WJYTopicsModel *topicModel;
 
-+ (instancetype)videoView;
 
 @end

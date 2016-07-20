@@ -8,6 +8,9 @@
 
 #import "WJYTabBar.h"
 #import "WJYPublishView.h"
+#import "WJYPostWordViewController.h"
+#import "WJYNavigationController.h"
+
 @interface WJYTabBar ()
 
 /**发布按钮*/
@@ -37,10 +40,16 @@
 }
 
 - (void) publishClick {
-    WJYPublishView *publishView = [WJYPublishView publishView];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    publishView.frame = window.bounds;
-    [window addSubview:publishView];
+//    WJYPublishView *publishView = [WJYPublishView publishView];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    publishView.frame = window.bounds;
+//    [window addSubview:publishView];
+    
+    
+    WJYPostWordViewController *postWord = [[WJYPostWordViewController alloc] init];
+    WJYNavigationController *nav = [[WJYNavigationController alloc] initWithRootViewController:postWord];
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [root presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)layoutSubviews {

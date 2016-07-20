@@ -13,6 +13,11 @@
 //当第一次调用这个类时会调用该方法
 +(void)initialize {
   [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+  [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+
+   
+    
+  [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName : [UIFont systemFontOfSize:17]} forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad {

@@ -27,3 +27,9 @@ NSString * const WJYUserSexFemale = @"f";
 CGFloat const topicCellCommentTitleHeight = 20;
 
 NSString * const tabbarSelectedNotification = @"tabbarSelectedNotification";
+
+/** 标签 - 间距*/
+CGFloat const tagMargin = 5;
+
+/** 标签 - 高度*/
+CGFloat const tagHeight = 25;
