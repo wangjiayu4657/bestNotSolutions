@@ -69,7 +69,7 @@
     UIView *header = [[UIView alloc] init];
     
     //将 topicCell 作为 headerView 中的 view
-    WJYTopicsCell *topicCell = [WJYTopicsCell cell];
+    WJYTopicsCell *topicCell = [WJYTopicsCell viewFromXib];
     topicCell.topic = self.topicModel;
     topicCell.size = CGSizeMake(screenWidth, self.topicModel.cellHeight);
     //设置 headerView 的高度

@@ -40,16 +40,16 @@
 }
 
 - (void) publishClick {
-//    WJYPublishView *publishView = [WJYPublishView publishView];
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//    publishView.frame = window.bounds;
-//    [window addSubview:publishView];
+    WJYPublishView *publishView = [WJYPublishView viewFromXib];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    publishView.frame = window.bounds;
+    [window addSubview:publishView];
     
     
-    WJYPostWordViewController *postWord = [[WJYPostWordViewController alloc] init];
-    WJYNavigationController *nav = [[WJYNavigationController alloc] initWithRootViewController:postWord];
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [root presentViewController:nav animated:YES completion:nil];
+//    WJYPostWordViewController *postWord = [[WJYPostWordViewController alloc] init];
+//    WJYNavigationController *nav = [[WJYNavigationController alloc] initWithRootViewController:postWord];
+//    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    [root presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)layoutSubviews {

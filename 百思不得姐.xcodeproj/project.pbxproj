@@ -47,6 +47,7 @@
 		FA3C841D1D3E3C0000D4497F /* WJYAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3C841C1D3E3C0000D4497F /* WJYAddTagViewController.m */; };
 		FA4F68E41D2501DA00CCB7D8 /* WJYTopicPictureViews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F68E31D2501DA00CCB7D8 /* WJYTopicPictureViews.m */; };
 		FA4F68E61D2501E600CCB7D8 /* WJYTopicPictureViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F68E51D2501E600CCB7D8 /* WJYTopicPictureViews.xib */; };
+		FA585F541D409D58008F5107 /* WJYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA585F531D409D58008F5107 /* WJYSettingViewController.m */; };
 		FA60C0AB1D0EA30E00D63B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0A91D0EA30E00D63B2F /* Main.storyboard */; };
 		FA60C0B01D0EA30E00D63B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA60C0AE1D0EA30E00D63B2F /* LaunchScreen.storyboard */; };
 		FA60C0BB1D0EA30E00D63B2F /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA60C0BA1D0EA30E00D63B2F /* _____Tests.m */; };
@@ -181,6 +182,8 @@
 		FA4F68E21D2501DA00CCB7D8 /* WJYTopicPictureViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYTopicPictureViews.h; sourceTree = "<group>"; };
 		FA4F68E31D2501DA00CCB7D8 /* WJYTopicPictureViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYTopicPictureViews.m; sourceTree = "<group>"; };
 		FA4F68E51D2501E600CCB7D8 /* WJYTopicPictureViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WJYTopicPictureViews.xib; sourceTree = "<group>"; };
+		FA585F521D409D58008F5107 /* WJYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYSettingViewController.h; sourceTree = "<group>"; };
+		FA585F531D409D58008F5107 /* WJYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYSettingViewController.m; sourceTree = "<group>"; };
 		FA60C09D1D0EA30E00D63B2F /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA60C0AA1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA60C0AF1D0EA30E00D63B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -463,6 +466,8 @@
 				FA6A9E291D3C8B6C00869077 /* WJYWebViewController.h */,
 				FA6A9E2A1D3C8B6C00869077 /* WJYWebViewController.m */,
 				FA6A9E2B1D3C8B6C00869077 /* WJYWebViewController.xib */,
+				FA585F521D409D58008F5107 /* WJYSettingViewController.h */,
+				FA585F531D409D58008F5107 /* WJYSettingViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				FA999FE91D336CF900A1B1D0 /* WJYCommentViewController.m in Sources */,
 				FA05D4461D1D34B500712025 /* WJYConst.m in Sources */,
 				FA1F37351D113B1A007EE546 /* WJYNavigationController.m in Sources */,
+				FA585F541D409D58008F5107 /* WJYSettingViewController.m in Sources */,
 				FA1EA8E31D1B92E8006B6E24 /* WJYWordViewController.m in Sources */,
 				FA1AB8361D17BD51008F7AC2 /* WJYRecommendedTag.m in Sources */,
 				FA989CC81D10268400752CE7 /* WJYNewViewController.m in Sources */,

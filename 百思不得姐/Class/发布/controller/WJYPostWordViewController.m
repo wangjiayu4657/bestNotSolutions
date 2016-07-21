@@ -24,11 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self setupNav];
     [self setupTextView];
     [self setupToolbar];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {

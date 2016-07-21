@@ -89,7 +89,8 @@ static CGFloat const springAnmationFactors = 10;
     CGFloat sloganImageViewX = screenWidth * 0.5;
     CGFloat sloganImageViewEndY = screenHeight * 0.2;
     CGFloat sloganImageViewBeginY = sloganImageViewEndY - screenHeight;
-    
+    sloganImageView.centerY = sloganImageViewBeginY;
+    sloganImageView.centerX = sloganImageViewX;
     POPSpringAnimation *sAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
     sAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(sloganImageViewX, sloganImageViewBeginY)];
     sAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(sloganImageViewX, sloganImageViewEndY)];

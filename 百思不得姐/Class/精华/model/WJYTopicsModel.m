@@ -75,13 +75,14 @@
 
         
         if (self.type == TopicTypePicture) {//图片帖子控件的高度
-            if (ViewH > topicMaxPictureHeight) {
-                ViewH = topicPictureBreakHeight;
-                self.isBigPicture = YES;
+            if (self.width != 0 && self.height != 0) {
+                if (ViewH > topicMaxPictureHeight) {
+                    ViewH = topicPictureBreakHeight;
+                    self.isBigPicture = YES;
+                }
+                _pictureViewFrame = CGRectMake(ViweX, ViewY, ViewW, ViewH);
+                _cellHeight += ViewH + topicCellMargin;
             }
-             _pictureViewFrame = CGRectMake(ViweX, ViewY, ViewW, ViewH);
-             _cellHeight += ViewH + topicCellMargin;
-            
         }else if (self.type == TopicTypeVoice) {//音频帖子控件的高度
              _voiceViewFrame =  CGRectMake(ViweX, ViewY, ViewW, ViewH);
              _cellHeight += ViewH + topicCellMargin;

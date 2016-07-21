@@ -41,8 +41,6 @@
 -(UIButton *)addTagButton{
     if (!_addTagButton) {
         UIButton *addTagButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        addTagButton.width = self.contentView.width;
-        addTagButton.height = 35;
         addTagButton.backgroundColor = [UIColor colorWithRed:0.290 green:0.545 blue:0.820 alpha:1.000];
         addTagButton.titleLabel.font = tagFont;
         addTagButton.contentEdgeInsets = UIEdgeInsetsMake(0, tagMargin, 0, tagMargin);
@@ -56,18 +54,50 @@
     return _addTagButton;
 }
 
+//设置容器 view
+-(UIView *)contentView{
+    if (!_contentView) {
+        UIView *contentView = [[UIView alloc] init];
+        [self.view addSubview:contentView];
+        self.contentView = contentView;
+    }
+    return _contentView;
+}
+
+//设置输入文本框
+-(UITextField *)textField{
+    if (!_textField) {
+        __weak typeof (self) weakSelf = self;
+        WJYTagTextField *textField = [[WJYTagTextField alloc] init];
+        textField.delegate = self;
+        textField.deleteBlock = ^{
+            if (weakSelf.textField.hasText) return ;
+            //如果 textfield的 text 为空则删除标签
+            [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
+        };
+        
+        [textField becomeFirstResponder];
+        [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
+        [self.contentView addSubview:textField];
+        self.textField = textField;
+    }
+    return _textField;
+}
+
 #pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    
     //设置导航
     [self setupNav];
     //设置容器 view
-    [self setupContentView];
+//    [self setupContentView];
     //设置输入文本框
-    [self setupTextField];
+//    [self setupTextField];
     
-    [self setupTags];
+   
 }
 
 //设置导航栏
@@ -79,43 +109,68 @@
 }
 
 //设置导航
-- (void) setupContentView {
-    UIView *contentView = [[UIView alloc] init];
-    
-    contentView.x = tagMargin;
-    contentView.y = 64 + tagMargin;
-    contentView.width = self.view.width - 2 * contentView.x;
-    contentView.height = self.view.height;
-    
-    [self.view addSubview:contentView];
-     self.contentView = contentView;
-}
+//- (void) setupContentView {
+//    UIView *contentView = [[UIView alloc] init];
+//    
+//    contentView.x = tagMargin;
+//    contentView.y = 64 + tagMargin;
+//    contentView.width = self.view.width - 2 * contentView.x;
+//    contentView.height = self.view.height;
+//    
+//    [self.view addSubview:contentView];
+//     self.contentView = contentView;
+//}
 
 //设置输入文本框
-- (void)setupTextField {
-    
-    __weak typeof (self) weakSelf = self;
-    WJYTagTextField *textField = [[WJYTagTextField alloc] init];
-    textField.width = self.contentView.width - 2 * tagMargin;
-    textField.x = tagMargin;
-    textField.delegate = self;
-    textField.deleteBlock = ^{
-        if (weakSelf.textField.hasText) return ;
-        //如果 textfield的 text 为空则删除标签
-        [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
-    };
-
-    [textField becomeFirstResponder];
-    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
-    [self.contentView addSubview:textField];
-    self.textField = textField;
-}
+//- (void)setupTextField {
+//    
+//    __weak typeof (self) weakSelf = self;
+//    WJYTagTextField *textField = [[WJYTagTextField alloc] init];
+//    textField.width = self.contentView.width - 2 * tagMargin;
+//    textField.x = tagMargin;
+//    textField.delegate = self;
+//    textField.deleteBlock = ^{
+//        if (weakSelf.textField.hasText) return ;
+//        //如果 textfield的 text 为空则删除标签
+//        [weakSelf tagButtonClick:[weakSelf.tagButtons lastObject]];
+//    };
+//
+//    [textField becomeFirstResponder];
+//    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
+//    [self.contentView addSubview:textField];
+//    self.textField = textField;
+//}
 
 - (void)setupTags {
-    for (NSString *text in self.tags) {
-        self.textField.text = text;
-        [self addButtonClick];
+    //确保只调用一次
+    if (self.tags.count) {
+        for (NSString *text in self.tags) {
+            self.textField.text = text;
+            [self addButtonClick];
+        }
+        self.tags = nil;
     }
+}
+
+- (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    //布局容器 view
+    self.contentView.x = tagMargin;
+    self.contentView.y = 64 + tagMargin;
+    self.contentView.width = self.view.width - 2 * self.contentView.x;
+    self.contentView.height = self.view.height;
+    
+    //布局容器 输入文本框
+    self.textField.x = tagMargin;
+    self.textField.width = self.contentView.width - 2 * tagMargin;
+    
+    //布局添加标签按钮
+    self.addTagButton.height = 35;
+    self.addTagButton.width = self.contentView.width;
+    
+    //设置标签
+     [self setupTags];
 }
 
 #pragma mark - 监听文字的改变
@@ -206,7 +261,7 @@
             //左边距离 = 上一个按钮的最大 x 值 + tagMargin
             CGFloat leftWidth = CGRectGetMaxX(previousButton.frame) + tagMargin;
             //右边剩余距离
-            CGFloat rightWidth = self.contentView.width - leftWidth;
+            CGFloat rightWidth = self.contentView.width - leftWidth;  
             if (rightWidth >= tagButton.width) {
                 tagButton.x = leftWidth;
                 tagButton.y = previousButton.y;
@@ -247,14 +302,6 @@
     }
     return YES;
 }
-
-
-
-
-
-
-
-
 
 
 

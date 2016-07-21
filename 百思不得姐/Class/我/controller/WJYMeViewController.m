@@ -10,6 +10,7 @@
 #import "WJYMeCell.h"
 #import "WJYTableFooterView.h"
 #import "WJYSquareModel.h"
+#import "WJYSettingViewController.h"
 
 @interface WJYMeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -51,7 +52,7 @@
 
 
 - (void) settingClick {
-    LogFunction;
+    [self.navigationController pushViewController:[[WJYSettingViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
 }
 
 - (void) moonClick {

@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
