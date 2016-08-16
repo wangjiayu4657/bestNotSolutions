@@ -49,7 +49,7 @@
 }
 
 
-//e设置导航栏按钮
+//设置导航栏按钮
 - (void) setUpNavgation {
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highLightImage:@"MainTagSubIconClick" target:self action:@selector(tagClick)];

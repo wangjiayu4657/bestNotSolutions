@@ -98,9 +98,11 @@
     
     HttpClient *aClient = [HttpClient sharedClient];
     [aClient getPath:@"http://api.budejie.com/api/api_open.php" params:param resultBlock:^(id responseObject, NSError *error) {
+//          NSLog(@"responseObject == %@",responseObject);
         if (!error) {
             if (self.params != param) return;
             self.maxtime = responseObject[@"info"][@"maxtime"];
+          
             self.dataSource = [WJYTopicsModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
